@@ -109,6 +109,11 @@ header {
     justify-content: right;
 }
 
+.reg-measure {
+    border-left: 3px solid #666666;
+    height: 60px;
+
+}
 .reg-btn {
     width: 200px;
     height: 60px;
@@ -126,10 +131,10 @@ header {
 }
 
     .reg-btn:hover {
-        background: rgb(2,0,36);
-        background: linear-gradient(27deg, rgba(2,0,36,0) 0%, rgba(67,196,6,1) 0%, rgba(0,212,255,1) 100%);
+        background: white;
         box-shadow: 0px 0px 5px 1px grey;
         cursor: pointer;
+        color: #666666;
     }
 
 .options-content {
