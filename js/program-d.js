@@ -1,3 +1,8 @@
+
+document.getElementById("instructionBtn").addEventListener("click", InstructionPop);
+document.getElementById("crossBtnSnake").addEventListener("click", InstructionUnPop);
+
+
 function outlineOn(element) {
     let paragraphs = element.querySelectorAll('.bl-btn-desc p');
 
@@ -44,4 +49,10 @@ function outlineOff(element) {
         element.querySelector('.bl-btn-icon img').src = './img/dev.png';
     }
 
+}
+function InstructionPop() {
+    document.getElementById("instructionText").style.visibility = "visible";
+}
+function InstructionUnPop() {
+    document.getElementById("instructionText").style.visibility = "hidden";
 }

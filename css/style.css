@@ -61,7 +61,12 @@ blockquote, q {
     font-weight: 600;
     font-size: 24px;
     color: gray;
-    margin-bottom:15px;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 header {
@@ -71,6 +76,24 @@ header {
     flex-direction: row;
     justify-content: center;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4e4e4e;
+    padding: 7px;
+    color: white;
+}
+
+.version {
+    margin-right: 50px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 25px;
+}
+
 .content {
     margin: auto;
     width: 100%;
@@ -79,25 +102,45 @@ header {
     justify-content: center;
     align-items: center;
 }
-    header h1 {
 
-        color: white;
-        font-family: Rubik;
-        font-weight: 600;
-        font-size: 100px;
-
-        letter-spacing: -0.025em;
-    }
+header h1 {
+    color: white;
+    font-family: Rubik;
+    font-weight: 600;
+    font-size: 100px;
+    letter-spacing: -0.025em;
+}
 
 .register {
     background-color: #4e4e4e;
     height: 80px;
-
 }
+
 .register-content {
-    padding-top:10px;
-    padding-right:10px;
-    text-align:right;
+    padding-top: 10px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.menu-content {
+    padding-top: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-box {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.box-right {
+    justify-content: flex-end;
+}
+
+.box-left {
+    justify-content: flex-start;
 }
 
 .reg-box {
@@ -105,15 +148,14 @@ header {
     flex-direction: row;
     height: 100%;
     right: 0;
-
     justify-content: right;
 }
 
 .reg-measure {
     border-left: 3px solid #666666;
     height: 60px;
-
 }
+
 .reg-btn {
     width: 200px;
     height: 60px;
@@ -138,13 +180,13 @@ header {
     }
 
 .options-content {
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1320px;
     margin: 15px 15px 15px 15px;
 }
+
 .bl-btn {
     width: 32%;
     margin-bottom: 20px;
@@ -154,34 +196,59 @@ header {
     font-family: Roboto;
     font-weight: 500;
     font-size: 20px;
-
     color: gray;
 }
+
     .bl-btn:hover {
         background: rgb(2,0,36);
         background: linear-gradient(27deg, rgba(2,0,36,0) 0%, rgba(67,196,6,1) 0%, rgba(0,212,255,1) 100%);
         box-shadow: 5px 5px 5px 1px grey;
         cursor: pointer;
-
     }
 
 
 .bl-btn-desc {
     padding: 0px 36px 22px 20px;
-
 }
 
 .options {
     text-align: center;
-    display: flex; 
-    justify-content: center; 
-    
+    display: flex;
+    justify-content: center;
 }
 
+.instruction {
+    position: absolute;
+    width: 30%;
+    margin-bottom: 20px;
+    left: 35%;
+    visibility: hidden;
+}
 
+.instruction-content {
+    position: relative;
+    background: rgb(237,242,240);
+    border-radius: 25px;
+}
 
+.snake-exit-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px 15px 0 0;
+}
 
+    .snake-exit-btn:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
 
-
-
-
+.desc-text {
+    margin-top: 10px;
+    padding: 34px 10px 10px 10px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 20px;
+    color: gray;
+    text-align: center;
+}
