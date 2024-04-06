@@ -230,6 +230,7 @@ header h1 {
     position: relative;
     background: rgb(237,242,240);
     border-radius: 25px;
+
 }
 .instruction-content .title{
     font-size: 42px;
@@ -256,4 +257,76 @@ header h1 {
     font-size: 20px;
     color: gray;
     text-align: center;
+}
+
+.regSection {
+    text-align:center;
+    margin-top:20px;
+
+}
+.regSection-content {
+    width: 50%;
+    border-radius: 25px;
+    background: rgb(237,242,240);
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    text-align:center;
+}
+
+
+
+.register-field {
+    text-align: center;
+    padding-left:50px;
+}
+
+.register-btn {
+    text-align: center;
+    padding-top: 30px;
+    display:flex;
+    justify-content:center;
+}
+
+.register-field p {
+    padding: 10px 10px 10px 10px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 24px;
+    color: #4e4e4e;
+    
+}
+
+
+.title-reg {
+    padding-top: 20px;
+    font-size: 40px;
+    color: #4e4e4e;
+    font-weight: 700;
+    font-family: Rubik;
+}
+
+.register-field input[type="text"],
+.register-field input[type="password"] {
+    width: 50%;
+    height: 30px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 20px;
+    color: #3d3d3d
+}
+
+.regSection-content img {
+    border-radius: 50%;
+}
+    .regSection-content img:hover {
+        cursor: pointer;
+        box-shadow: 0 0 5px gray;
+    }
+
+.register-img-section {
+    visibility: hidden;
+    position: absolute;
+    transition: height 0.5s ease;
+   
 }

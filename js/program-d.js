@@ -7,7 +7,7 @@ function outlineOn(element) {
     let paragraphs = element.querySelectorAll('.bl-btn-desc p');
 
     paragraphs.forEach(function (paragraph) {
-        paragraph.style.color = 'white'; 
+        paragraph.style.color = 'white';
     });
 
     if (element.id === 'bl-1') {
@@ -24,8 +24,8 @@ function outlineOn(element) {
         element.querySelector('.bl-btn-icon img').src = './img/dev-white.png';
     }
 
-    
-    
+
+
 }
 
 function outlineOff(element) {
@@ -56,3 +56,5 @@ function InstructionPop() {
 function InstructionUnPop() {
     document.getElementById("instructionText").style.visibility = "hidden";
 }
+
+
