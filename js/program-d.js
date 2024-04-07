@@ -1,6 +1,6 @@
 
-document.getElementById("instructionBtn").addEventListener("click", InstructionPop);
-document.getElementById("crossBtnSnake").addEventListener("click", InstructionUnPop);
+
+
 
 
 function outlineOn(element) {
@@ -50,11 +50,16 @@ function outlineOff(element) {
     }
 
 }
-function InstructionPop() {
-    document.getElementById("instructionText").style.visibility = "visible";
-}
-function InstructionUnPop() {
-    document.getElementById("instructionText").style.visibility = "hidden";
-}
+
+
+//document.addEventListener('DOMContentLoaded', function () {
+//    if (localStorage.getItem('userData')) {
+//        var userData = JSON.parse(localStorage.getItem('userData'));
+//        console.log('Email:', userData.email);
+//        console.log('Image Path:', userData.image);
+//    } else {
+//        console.log('No user data found in localStorage');
+//    }
+//});
 
 

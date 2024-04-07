@@ -1,4 +1,5 @@
 document.getElementById("imageChanger").addEventListener("click", ImageChange);
+document.getElementById("regBtn").addEventListener("click", Register);
 document.getElementById("icon1").addEventListener("click", function () {
     changeIcon("./img/icon1.png");
 });
@@ -29,4 +30,29 @@ function changeIcon(iconPath) {
     document.getElementById("imageChanger").style.position = "inherit";
     document.getElementById("imageChanger").style.visibility = "visible";
     document.getElementById("currentIcon").src = iconPath;
+}
+
+function Register() {
+    var email = document.getElementById('email').value;
+    var nickname = document.getElementById('nickname').value;
+    var password = document.getElementById('psw').value;
+    var imagePath = document.getElementById('currentIcon').src;
+
+
+    var confirmPassword = document.getElementById('psw2').value;
+    if (password !== confirmPassword) {
+        alert("Registration Error: Passwords are different!");
+        return;
+    }
+    //var userData = {
+    //    email: email,
+    //    nickname: nickname,
+    //    password: password,
+    //    image: imagePath
+    //};
+
+    //localStorage.setItem('userData', JSON.stringify(userData));
+    alert("Registration completed!");
+    window.location.replace("index.html");
+/*    localStorage.clear();*/
 }
