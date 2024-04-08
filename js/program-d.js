@@ -52,14 +52,6 @@ function outlineOff(element) {
 }
 
 
-//document.addEventListener('DOMContentLoaded', function () {
-//    if (localStorage.getItem('userData')) {
-//        var userData = JSON.parse(localStorage.getItem('userData'));
-//        console.log('Email:', userData.email);
-//        console.log('Image Path:', userData.image);
-//    } else {
-//        console.log('No user data found in localStorage');
-//    }
-//});
+
 
 

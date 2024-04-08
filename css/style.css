@@ -64,6 +64,10 @@ blockquote, q {
     margin-bottom: 15px;
 }
 
+body {
+    overflow: hidden; /* Hide scrollbars */
+}
+
 a {
     text-decoration: none;
     color: inherit;

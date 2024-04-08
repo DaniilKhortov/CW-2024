@@ -41,8 +41,9 @@
 
             </div>
 
-            <div class="menu-box box-right">
+            <div class="menu-box box-right" id="no-account">
                 <div class="reg-measure"></div>
+
                 <a href="register.html">
                     <div class="reg-btn ">
                         <p>Реєстрація</p>
@@ -51,7 +52,26 @@
                 <div class="reg-btn">
                     <p>Вхід</p>
                 </div>
+
             </div>
+            <div class="menu-box box-right account" id="account">
+                <div class="reg-measure"></div>
+                <div class="account-image">
+                    <img width="60" id="accountImg" src="./img/icon0.png" />
+                </div>
+                <div class="account-info">
+                    <p id="accountName">No name</p>
+                </div>
+                <div class="account-btn" id="accountExit">
+                    <p>Вихід</p>
+                </div>
+                <div class="account-btn btn-red">
+                    <p>Видалити</p>
+                </div>
+
+
+            </div>
+
         </div>
 
     </div>
@@ -139,6 +159,7 @@
 
     <script src="./js/gameSnake.js"></script>
     <script type="text/javascript" async="" src="./js/snake.js"></script>
+    <script type="text/javascript" async="" src="./js/account.js"></script>
 </body>
 </html>
 

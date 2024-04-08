@@ -32,27 +32,38 @@ function changeIcon(iconPath) {
     document.getElementById("currentIcon").src = iconPath;
 }
 
+function validateRealisticEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@(gmail\.com|yahoo\.com|outlook\.com)$/;
+    return re.test(String(email).toLowerCase());
+}
+
 function Register() {
-    var email = document.getElementById('email').value;
-    var nickname = document.getElementById('nickname').value;
-    var password = document.getElementById('psw').value;
-    var imagePath = document.getElementById('currentIcon').src;
+    let email = document.getElementById('email').value;
+    let nickname = document.getElementById('nickname').value;
+    let password = document.getElementById('psw').value;
+    let imagePath = document.getElementById('currentIcon').src;
 
+    let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    var confirmPassword = document.getElementById('psw2').value;
+    let confirmPassword = document.getElementById('psw2').value;
+
     if (password !== confirmPassword) {
         alert("Registration Error: Passwords are different!");
         return;
     }
-    //var userData = {
-    //    email: email,
-    //    nickname: nickname,
-    //    password: password,
-    //    image: imagePath
-    //};
 
-    //localStorage.setItem('userData', JSON.stringify(userData));
+    if (validateRealisticEmail(email)===false) {
+        alert("Registration Error: Email address is invalid!");
+        return;
+    }
+
+    sessionStorage.setItem("email", email);
+    sessionStorage.setItem("nickname", nickname);
+    sessionStorage.setItem("password", password);
+    sessionStorage.setItem("imagePath", imagePath);
+
+    
     alert("Registration completed!");
     window.location.replace("index.html");
-/*    localStorage.clear();*/
+
 }
