@@ -36,7 +36,19 @@ function validateRealisticEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@(gmail\.com|yahoo\.com|outlook\.com)$/;
     return re.test(String(email).toLowerCase());
 }
+function validatePassword(password) {
 
+    const isLongEnough = password.length >= 8;
+
+    const hasUpperCase = /[A-Z]/.test(password);
+
+    const hasLowerCase = /[a-z]/.test(password);
+
+    const hasSpecialCharacter = /[^A-Za-z0-9]/.test(password);
+    const hasNumber = /\d/.test(password);
+
+    return isLongEnough && hasUpperCase && hasLowerCase && hasSpecialCharacter && hasNumber;
+}
 function Register() {
     let email = document.getElementById('email').value;
     let nickname = document.getElementById('nickname').value;
@@ -54,6 +66,10 @@ function Register() {
 
     if (validateRealisticEmail(email)===false) {
         alert("Registration Error: Email address is invalid!");
+        return;
+    }
+    if (validatePassword(password) === false) {
+        alert("Password must contain one uppercase letter, one undercase letter, one digit and one spacial symbol. The minimal length of password is 8 symbols!");
         return;
     }
 

@@ -227,6 +227,7 @@ header h1 {
     margin-bottom: 20px;
     left: 35%;
     visibility: hidden;
+    margin-top:30px;
 }
 
 .instruction-content {
@@ -238,14 +239,33 @@ header h1 {
     .instruction-content .title {
         font-size: 42px;
         font-weight: 800;
+
+    }
+    .instruction-content ul {
+        text-align:left;
+
+
+    }
+    .instruction-content li {
+        margin-top: 7px;
+    }
+.instruction-list{
+    width:62%;
+    margin:auto;
+    margin-top:10px;
+}
+    .instruction-list strong {
+        font-size: 32px;
+        font-weight: 600;
+        margin-top: 20px;
     }
 
-.snake-exit-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 15px 15px 0 0;
-}
+    .snake-exit-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 15px 15px 0 0;
+    }
 
     .snake-exit-btn:hover {
         transform: scale(1.2);
@@ -371,4 +391,11 @@ header h1 {
 
 .account-image {
     margin-right: 10px;
+}
+
+.two-btn-box{
+    display:flex;
+    margin-top:20px;
+    justify-content:center;
+    flex-direction:row;
 }
