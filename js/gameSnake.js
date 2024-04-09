@@ -7,11 +7,22 @@ ground.src = "img/ground.png";
 const foodImg = new Image();
 foodImg.src = "img/food3.png";
 
+const foodSuper = new Image();
+foodSuper.src = "img/foodS.png";
+
 let box = 32;
 
 let score = 0;
 
 let time = 400;
+let game, specialFood = null;
+
+let touchStartX = null;
+let touchStartY = null;
+
+let dir;
+
+let gamePaused = false;
 
 let food = {
   x: Math.floor((Math.random() * 17 + 1)) * box,
@@ -24,9 +35,58 @@ snake[0] = {
   y: 10 * box
 };
 
-document.addEventListener("keydown", direction);
+function spawnSpecialFood(chance) {
+    let randNum = Math.floor(Math.random() * 100) + 1;
 
-let dir;
+    if (randNum <= chance) {
+        specialFood = {
+            x: Math.floor((Math.random() * 17 + 1)) * box,
+            y: Math.floor((Math.random() * 15 + 3)) * box,
+        };
+    }
+}
+
+document.addEventListener("keydown", direction);
+//-------------------------------------------------------
+canvas.addEventListener('touchstart', function(e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+}, false);
+
+canvas.addEventListener('touchmove', function(e) {
+    if (!touchStartX || !touchStartY) {
+        return;
+    }
+
+    let xUp = e.touches[0].clientX;
+    let yUp = e.touches[0].clientY;
+
+    let xDiff = touchStartX - xUp;
+    let yDiff = touchStartY - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 0 && dir != "right") {
+            /* left swipe */
+            dir = "left";
+        } else if (dir != "left") {
+            /* right swipe */
+            dir = "right";
+        }
+    } else {
+        if (yDiff > 0 && dir != "down") {
+            /* up swipe */
+            dir = "up";
+        } else if (dir != "up") {
+            /* down swipe */
+            dir = "down";
+        }
+    }
+
+    /* reset values */
+    touchStartX = null;
+    touchStartY = null;
+}, false);
+//-------------------------------------------------------
 
 function direction(event) {
   if(event.keyCode == 37 && dir != "right"||event.keyCode == 65 && dir != "right")
@@ -37,23 +97,32 @@ function direction(event) {
     dir = "right";
   else if(event.keyCode == 40 && dir != "up"||event.keyCode == 83 && dir != "up")
     dir = "down";
+  else if(event.keyCode == 80)
+    togglePause();
 }
 
 function eatTail(head, arr) {
   for(let i = 0; i < arr.length; i++) {
     if(head.x == arr[i].x && head.y == arr[i].y){
-      clearInterval(game);
-      alert("Game over");
-      location.reload();
+      gameOver();
     }   
   }
 }
 
 function drawGame() {
+  if(gamePaused) {
+    return;
+  }
+  if(score == 255) {
+    alert("Congratulation!!!");
+  }
   ctx.clearRect(0, 0, 609, 609);
   ctx.drawImage(ground, 0, 0);
 
   ctx.drawImage(foodImg, food.x, food.y);
+  if (specialFood) {
+    ctx.drawImage(foodSuper, specialFood.x, specialFood.y);
+  }
 
   for(let i = 0; i < snake.length; i++) {
     ctx.fillStyle = i == 0 ? "green" : "green";
@@ -67,6 +136,14 @@ function drawGame() {
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
+  if (specialFood && snakeX == specialFood.x && snakeY == specialFood.y) {
+    score += 5; 
+    specialFood = null; 
+  }
+  let x = Math.random();
+  if ( x < 0.8 && x > 0.76 ) {
+    spawnSpecialFood(5);
+  }
   if(snakeX == food.x && snakeY == food.y) {
     score++;
     timeLess();
@@ -79,9 +156,7 @@ function drawGame() {
   }
 
   if(snakeX < box || snakeX > box * 17 || snakeY < 3 * box || snakeY > box * 17){
-    clearInterval(game);
-    alert("Game over");
-    location.reload();
+    gameOver();
   }
     
 
@@ -99,25 +174,63 @@ function drawGame() {
 
   snake.unshift(newHead);
 }
-let game; 
+
+function stopScroll() {
+  window.removeEventListener('touchmove', preventScroll, { passive: false });
+}
+
+function preventScroll(e) {
+  e.preventDefault();
+}
+
+function togglePause() {
+  gamePaused = !gamePaused;
+  stopScroll();
+}
 
 function startGame() {
+  window.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+  }, { passive: false });
   game = setInterval(drawGame, time); 
 }
 
+function starting(){
+    startGame();
+    document.getElementById("button-start").style.display = "none";
+}
+
+function gameOver() {
+  stopScroll();
+  clearInterval(game);
+  document.getElementById("finalScore").innerText = "Ваш результат: " + score;
+  document.getElementById("exitWindow").style.visibility = "visible";
+}
+
 function timeLess() {
-  if(time > 100){
+  if(time > 150){
     time = time - 10;
     clearInterval(game); 
     startGame(); 
   } 
 }
 
-startGame(); 
+document.getElementById("button-pause").addEventListener("click", togglePause);
+document.getElementById("button-start").addEventListener("click", starting);
+
+//startGame(); 
+// Завершення гри
+let modal = document.getElementById("exitWindow");
+
+document.getElementById("restart").addEventListener("click", function() {
+  modal.style.display = "none"; 
+  location.reload();
+});
+
+document.getElementById("mainMenu").addEventListener("click", function() {
+  modal.style.display = "none"; 
+});
 
 
 
 
-
-
-//
