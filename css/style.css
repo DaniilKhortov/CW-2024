@@ -64,8 +64,10 @@ blockquote, q {
     margin-bottom: 15px;
 }
 
-body {
-    overflow: hidden; /* Hide scrollbars */
+
+
+.no-overflow {
+    overflow: hidden;
 }
 
 a {
@@ -136,7 +138,7 @@ header h1 {
 .menu-box {
     display: flex;
     flex-direction: row;
-    height: 100%;
+
 }
 
 .box-right {
@@ -398,4 +400,73 @@ header h1 {
     margin-top:20px;
     justify-content:center;
     flex-direction:row;
+}
+.history-bl{
+    margin-top:20px;
+}
+.history-bl-content {
+    text-align: center;
+
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+
+.match-bl {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    background: rgb(237,242,240);
+    border-radius: 25px;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px 36px 20px 20px;
+}
+    .match-bl p:not(.small-title) {
+        margin-top: 5px;
+    }
+.match-tiltle {
+    font-weight: 900;
+    font-size: 40px;
+    display: flex;
+
+}
+
+.match-name {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.small-title{
+    margin-top:0px;
+    font-weight:800;
+    font-size: 28px;
+}
+
+.match-bl-right{
+    display:flex;
+    justify-content:flex-end;
+}
+
+.match-bl-right > *{
+    padding:0px 15px 0px 15px;
+
+}
+
+.reg-measure-2 {
+    border-left: 3px solid gray;
+    height: 55px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.history-btn {
+    margin-top:15px;
+
+}
+.history-btn-content {
+    display: flex;
+    justify-content:center;
+    flex-direction: row;
 }
