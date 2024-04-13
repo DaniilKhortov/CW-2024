@@ -96,7 +96,7 @@
                 </div>
             </div>
             <div onmouseover="outlineOn(this)" onmouseout="outlineOff(this)" class="bl-btn" id="bl-3">
-                <a href="history.html">
+                <a href="history.html" id="accountLinkCheck">
                     <div class="bl-btn-icon">
                         <img width="125" src="./img/history.png" />
                     </div>
@@ -107,13 +107,15 @@
                 </a>
             </div>
             <div onmouseover="outlineOn(this)" onmouseout="outlineOff(this)" class="bl-btn" id="bl-4">
-                <div class="bl-btn-icon">
-                    <img width="125" src="./img/update.png" />
-                </div>
-                <div class="bl-btn-desc bl-btn-play">
-                    <p class="title">Історія оновлень</p>
-                    <p>Тут можна переглянути ввесь список змін. Також тут можна відслідкувати розвиток проекту!<p>
-                </div>
+                <a href="versionLog.html">
+                    <div class="bl-btn-icon">
+                        <img width="125" src="./img/update.png" />
+                    </div>
+                    <div class="bl-btn-desc bl-btn-play">
+                        <p class="title">Історія оновлень</p>
+                        <p>Тут можна переглянути ввесь список змін. Також тут можна відслідкувати розвиток проекту!<p>
+                    </div>
+                </a>
             </div>
             <div onmouseover="outlineOn(this)" onmouseout="outlineOff(this)" class="bl-btn" id="bl-5">
                 <div class="bl-btn-icon">
@@ -141,7 +143,7 @@
 
             <div class="reg-box reg-box-right">
                 <div class="version">
-                    <p>0.0.1a</p>
+                    <p id="appVersion">0.0.1a</p>
                 </div>
 
             </div>
@@ -156,7 +158,7 @@
     <!--script section-->
     <script type="text/javascript" async="" src="./js/program-d.js"></script>
     <script type="text/javascript" async="" src="./js/account.js"></script>
-
+    <script type="text/javascript" async="" src="./js/version.js"></script>
 </body>
 </html>
 

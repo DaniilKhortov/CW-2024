@@ -24,7 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function Exit() {
-    sessionStorage.clear();
-    location.reload();
+    if (confirm("Do you confirm log out?") == true) {
+        sessionStorage.clear();
+        location.reload();
+    } 
 
 }
