@@ -27,6 +27,7 @@ function Exit() {
     if (confirm("Do you confirm log out?") == true) {
         sessionStorage.clear();
         location.reload();
+        window.location.replace("index.html");
     } 
 
 }

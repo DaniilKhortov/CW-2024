@@ -59,6 +59,13 @@ document.getElementById("accountLinkCheck").addEventListener('click', function (
     }
 });
 
+document.getElementById("accountLinkCheck2").addEventListener('click', function (event) {
+    if (sessionStorage.getItem("email") == null) {
+        event.preventDefault();
+        alert('You have to log in for this feature!');
+    }
+});
+
 
 
 
