@@ -593,7 +593,7 @@ header h1 {
 }
 
 .bl-icon-green {
-    background: linear-gradient(90deg, rgba(0,192,187,1) 0%, rgba(21, 165, 154, 1) 100%);
+    background: linear-gradient(90deg, green 0%, green 100%);
 }
 
 .bl-icon-red {
@@ -614,4 +614,24 @@ header h1 {
     margin: 0 auto;
 }
 
+.desc-bl {
+    
+    margin-top: 15px;
+}
+.desc-bl-content {
+    width: 70%;
+    text-align: left;
+    margin: auto;
+    font-size: 32px;
+    color: grey;
+}
+    .desc-bl-content .small-title {
+        margin-top: 20px;
+        font-size: 40px;
+        color: #565656;
+        
+    }
+    .desc-bl-content p {
+        margin-bottom: 5px;
+    }
 
