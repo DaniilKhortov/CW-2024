@@ -21,7 +21,6 @@ function ImageChange() {
 }
 
 
-
 function changeIcon(iconPath) {
     let registerImgSection = document.getElementById("registerImgSection");
 
@@ -33,7 +32,7 @@ function changeIcon(iconPath) {
 }
 
 function validateRealisticEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@(gmail\.com|yahoo\.com|outlook\.com)$/;
+    let re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@(gmail\.com|yahoo\.com|outlook\.com)$/;
     return re.test(String(email).toLowerCase());
 }
 function validatePassword(password) {
@@ -73,13 +72,38 @@ function Register() {
         return;
     }
 
-    sessionStorage.setItem("email", email);
-    sessionStorage.setItem("nickname", nickname);
-    sessionStorage.setItem("password", password);
-    sessionStorage.setItem("imagePath", imagePath);
+    const player = {
+        email: email,
+        nickname: nickname,
+        password: password,
+        record: 0,
+        registrationDate: new Date()
+    };
 
-    
-    alert("Registration completed!");
-    window.location.replace("index.html");
-
+    fetch('/register', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(player)
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(err => { throw new Error(err.error) });
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.user) {
+            sessionStorage.setItem("token", data.token); 
+            sessionStorage.setItem("email", data.user.email);
+            sessionStorage.setItem("nickname",  data.user.nickname);
+            alert("Registration completed!");
+            window.location.replace("index.html");
+        } else {
+            console.error('User data is missing in the response');
+        }
+    })
+    .catch(error => {
+        alert(`Помилка: ${error.message}`);
+        console.error('Error:', error);
+    });
 }
