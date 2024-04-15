@@ -306,6 +306,10 @@ header h1 {
     padding-left: 50px;
 }
 
+.register-field p{
+    margin-top:15px;
+}
+
 .register-btn {
     text-align: center;
     padding-top: 30px;
@@ -635,3 +639,12 @@ header h1 {
         margin-bottom: 5px;
     }
 
+textarea {
+    width: 50%;
+    height:300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
