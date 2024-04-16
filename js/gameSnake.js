@@ -205,6 +205,39 @@ function gameOver() {
   clearInterval(game);
   document.getElementById("finalScore").innerText = "Ваш результат: " + score;
   document.getElementById("exitWindow").style.visibility = "visible";
+
+  const gameHistory = {
+    nickname: sessionStorage.getItem("nickname"),
+    date: new Date(),
+    score: score
+  };
+  fetch('/gameHistory', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(gameHistory)
+  })
+  .then(response => response.json())
+  .then(data => console.log(data.message))
+  .catch(error => console.error('Error:', error));
+  
+  fetch(`/getUserRecord/${sessionStorage.getItem("nickname")}`, {
+    method: 'GET',
+    headers: {'Content-Type': 'application/json'},
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (score > data.record) {
+      fetch(`/updateUserRecord/${sessionStorage.getItem("nickname")}`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ record: score })
+      })
+      .then(response => response.json())
+      .then(data => console.log(data.message))
+      .catch(error => console.error('Error:', error));
+    }
+  })
+  .catch(error => console.error('Error:', error));
 }
 
 function timeLess() {

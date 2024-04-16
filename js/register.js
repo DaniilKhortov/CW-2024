@@ -53,6 +53,7 @@ function Register() {
     let nickname = document.getElementById('nickname').value;
     let password = document.getElementById('psw').value;
     let imagePath = document.getElementById('currentIcon').src;
+    
 
     let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -77,6 +78,7 @@ function Register() {
         nickname: nickname,
         password: password,
         record: 0,
+        imagePath: imagePath,
         registrationDate: new Date()
     };
 
@@ -95,7 +97,8 @@ function Register() {
         if (data.user) {
             sessionStorage.setItem("token", data.token); 
             sessionStorage.setItem("email", data.user.email);
-            sessionStorage.setItem("nickname",  data.user.nickname);
+            sessionStorage.setItem("nickname", data.user.nickname);
+            sessionStorage.setItem("imagePath",  data.user.imagePath);
             alert("Registration completed!");
             window.location.replace("index.html");
         } else {

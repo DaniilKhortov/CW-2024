@@ -22,6 +22,7 @@ const playerSchema = new mongoose.Schema({
   nickname: String,
   password: String,
   record: Number,
+  imagePath: String,
   registrationDate: {
     type: Date,
     default: Date.now
@@ -30,6 +31,13 @@ const playerSchema = new mongoose.Schema({
 
 const User = mongoose.model('Player', playerSchema);
 
+const gameHistorySchema = new mongoose.Schema({
+  nickname: String,
+  date: Date,
+  score: Number
+});
+
+const GameHistory = mongoose.model('GameHistory', gameHistorySchema);
 app.post('/register', async (req, res) => {
   const { email, nickname } = req.body;
   try {
@@ -47,9 +55,9 @@ app.post('/register', async (req, res) => {
     const newUser = new User(req.body);
     const savedUser = await newUser.save();
 
-    const token = jwt.sign({ id: savedUser._id }, 'yourSecretKey', { expiresIn: '1h' });
+    //const token = jwt.sign({ id: savedUser._id }, 'yourSecretKey', { expiresIn: '1h' });
 
-    res.json({ message: 'User registered!', user: savedUser.toObject(), token });
+    res.json({ message: 'User registered!', user: savedUser.toObject()});//, token 
   } catch (err) {
     res.status(400).json('Error: ' + err);
   }
@@ -63,14 +71,11 @@ app.post('/login', async (req, res) => {
     if (!user) {
       return res.status(400).json({ error: 'User with this email does not exist' });
     }
-
     if (user.password !== password) {
       return res.status(400).json({ error: 'Incorrect password' });
     }
-
-    const token = jwt.sign({ id: user._id }, 'yourSecretKey', { expiresIn: '1h' });
-
-    res.json({ message: 'User logged in!', user: user.toObject(), token }); 
+    //const token = jwt.sign({ id: user._id }, 'yourSecretKey', { expiresIn: '1h' });
+    res.json({ message: 'User logged in!', user: user.toObject() }); //, token
   } catch (err) {
     res.status(400).json('Error: ' + err);
   }
@@ -85,6 +90,50 @@ app.get('/leaderBoard', async (req, res) => {
   }
 });
 
+app.post('/gameHistory', async (req, res) => {
+  const { nickname, date, score } = req.body;
+  try {
+    const gameHistory = new GameHistory({ nickname, date, score });
+    await gameHistory.save();
+    res.json({ message: 'Game history saved!' });
+  } catch (err) {
+    res.status(400).json('Error: ' + err);
+  }
+});
+
+app.get('/getUserRecord/:nickname', async (req, res) => {
+  const { nickname } = req.params;
+  try {
+    const user = await User.findOne({ nickname: nickname });
+
+    if (!user) {
+      return res.status(400).json({ error: 'User does not exist' });
+    }
+
+    res.json({ record: user.record });
+  } catch (err) {
+    res.status(400).json('Error: ' + err);
+  }
+});
+
+app.post('/updateUserRecord/:nickname', async (req, res) => {
+  const { nickname } = req.params;
+  const { record } = req.body;
+  try {
+    const user = await User.findOne({ nickname: nickname });
+
+    if (!user) {
+      return res.status(400).json({ error: 'User does not exist' });
+    }
+
+    user.record = record;
+    await user.save();
+
+    res.json({ message: 'Record updated!' });
+  } catch (err) {
+    res.status(400).json('Error: ' + err);
+  }
+});
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
