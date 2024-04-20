@@ -177,7 +177,7 @@ header h1 {
     margin-left: 15px;
 }
 
-    .reg-btn:hover, .account-btn:hover {
+    .reg-btn:hover, .account-btn:hover, .reg-btn:active, .account-btn:active {
         background: white;
         box-shadow: 0px 0px 5px 1px grey;
         cursor: pointer;
@@ -204,13 +204,18 @@ header h1 {
     color: gray;
 }
 
-    .bl-btn:hover {
+    .bl-btn:hover, .bl-btn:active {
         background: rgb(2,0,36);
         background: linear-gradient(27deg, rgba(2,0,36,0) 0%, rgba(67,196,6,1) 0%, rgba(0,212,255,1) 100%);
         box-shadow: 5px 5px 5px 1px grey;
         cursor: pointer;
     }
 
+    .bl-btn.active {
+        background: rgb(2, 0, 36);
+        background: linear-gradient(27deg, rgba(2, 0, 36, 0) 0%, rgba(67, 196, 6, 1) 0%, rgba(0, 212, 255, 1) 100%);
+        box-shadow: 5px 5px 5px 1px grey;
+    }
 
 .bl-btn-desc {
     padding: 0px 36px 22px 20px;
@@ -224,7 +229,7 @@ header h1 {
 
 .instruction {
     position: absolute;
-    width: 30%;
+    
     margin-bottom: 20px;
     left: 35%;
     visibility: hidden;
@@ -235,6 +240,8 @@ header h1 {
     position: relative;
     background: rgb(237,242,240);
     border-radius: 25px;
+    width: 30%;
+    margin:0px 15px 0px 15px;
 }
 
     .instruction-content .title {
