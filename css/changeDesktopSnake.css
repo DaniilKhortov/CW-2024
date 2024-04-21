@@ -6,3 +6,12 @@
 
     
 }
+@media screen and (min-width: 1300px) {
+    .box-right {
+        display: block;
+    }
+    .menu-box {
+        display: flex;
+        flex-direction: row;
+    }
+}
