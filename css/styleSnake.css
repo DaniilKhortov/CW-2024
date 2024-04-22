@@ -4,6 +4,7 @@ canvas {
   width: auto;
   height: auto;
 }
+/*reset css*/
 .game-container {
   display: flex;
   flex-direction: column;

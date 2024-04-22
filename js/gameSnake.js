@@ -1,28 +1,13 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-const ground = new Image();
+const ground = new Image(), foodImg = new Image(), foodSuper = new Image();
 ground.src = "img/ground.png";
-
-const foodImg = new Image();
 foodImg.src = "img/food3.png";
-
-const foodSuper = new Image();
 foodSuper.src = "img/foodS.png";
 
-let box = 32;
-
-let score = 0;
-
-let time = 400;
-let game, specialFood = null;
-
-let touchStartX = null;
-let touchStartY = null;
-
-let dir;
-
-let gamePaused = false;
+let box = 32, score = 0, time = 400,  game, specialFood = null;
+let touchStartX = null, touchStartY = null, dir, gamePaused = false;
 
 let food = {
   x: Math.floor((Math.random() * 17 + 1)) * box,
@@ -58,31 +43,24 @@ canvas.addEventListener('touchmove', function(e) {
         return;
     }
 
-    let xUp = e.touches[0].clientX;
-    let yUp = e.touches[0].clientY;
+    let xUp = e.touches[0].clientX, yUp = e.touches[0].clientY;
 
-    let xDiff = touchStartX - xUp;
-    let yDiff = touchStartY - yUp;
+    let xDiff = touchStartX - xUp, yDiff = touchStartY - yUp;
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
         if (xDiff > 0 && dir != "right") {
-            /* left swipe */
             dir = "left";
         } else if (dir != "left") {
-            /* right swipe */
             dir = "right";
         }
     } else {
         if (yDiff > 0 && dir != "down") {
-            /* up swipe */
             dir = "up";
         } else if (dir != "up") {
-            /* down swipe */
             dir = "down";
         }
     }
 
-    /* reset values */
     touchStartX = null;
     touchStartY = null;
 }, false);
@@ -206,38 +184,41 @@ function gameOver() {
   document.getElementById("finalScore").innerText = "Ваш результат: " + score;
   document.getElementById("exitWindow").style.visibility = "visible";
 
-  const gameHistory = {
-    nickname: sessionStorage.getItem("nickname"),
-    date: new Date(),
-    score: score
-  };
-  fetch('/gameHistory', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(gameHistory)
-  })
-  .then(response => response.json())
-  .then(data => console.log(data.message))
-  .catch(error => console.error('Error:', error));
-  
-  fetch(`/getUserRecord/${sessionStorage.getItem("nickname")}`, {
-    method: 'GET',
-    headers: {'Content-Type': 'application/json'},
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (score > data.record) {
-      fetch(`/updateUserRecord/${sessionStorage.getItem("nickname")}`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ record: score })
-      })
-      .then(response => response.json())
-      .then(data => console.log(data.message))
-      .catch(error => console.error('Error:', error));
+  tempNickname = sessionStorage.getItem("nickname")
+  if (tempNickname != null) {
+    const gameHistory = {
+      nickname: tempNickname,
+      date: new Date(),
+      score: score
+    };
+    fetch('/gameHistory', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(gameHistory)
+    })
+    .then(response => response.json())
+    .then(data => console.log(data.message))
+    .catch(error => console.error('Error:', error));
+    
+    fetch(`/getUserRecord/${sessionStorage.getItem("nickname")}`, {
+      method: 'GET',
+      headers: {'Content-Type': 'application/json'},
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (score > data.record) {
+        fetch(`/updateUserRecord/${sessionStorage.getItem("nickname")}`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ record: score })
+        })
+        .then(response => response.json())
+        .then(data => console.log(data.message))
+        .catch(error => console.error('Error:', error));
+      }
+    })
+    .catch(error => console.error('Error:', error));
     }
-  })
-  .catch(error => console.error('Error:', error));
 }
 
 function timeLess() {

@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const app = express();
 
-app.use(express.static('D:\\Mysor2\\Web-prog\\Kursova\\github\\CW-2024'));//мій шлях попробуй попрацювати зі своїм
+app.use(express.static('D:\\Mysor2\\Web-prog\\Kursova\\github\\CW-2024'));//мій шлях, попробуй попрацювати зі своїм
 app.use(cors());
 app.use(express.json());
 
@@ -96,6 +96,16 @@ app.post('/gameHistory', async (req, res) => {
     const gameHistory = new GameHistory({ nickname, date, score });
     await gameHistory.save();
     res.json({ message: 'Game history saved!' });
+  } catch (err) {
+    res.status(400).json('Error: ' + err);
+  }
+});
+
+app.get('/userGames/:nickname', async (req, res) => {
+  const { nickname } = req.params;
+  try {
+    const games = await GameHistory.find({ nickname: nickname }).sort({ date: -1 });
+    res.json(games);
   } catch (err) {
     res.status(400).json('Error: ' + err);
   }

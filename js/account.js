@@ -1,11 +1,15 @@
 document.getElementById("accountExit").addEventListener("click", Exit);
 
-document.addEventListener('DOMContentLoaded', function () {
-    if (sessionStorage.getItem("email") !== null) {
-        console.log(sessionStorage.getItem("email"));
-        console.log(sessionStorage.getItem("nickname"));
-        console.log(sessionStorage.getItem("password"));
-        console.log(sessionStorage.getItem("imagePath"));
+//document.addEventListener('DOMContentLoaded', function () {
+    
+
+
+//});
+if (sessionStorage.getItem("email") !== null) {
+        //console.log(sessionStorage.getItem("email"));
+        //console.log(sessionStorage.getItem("nickname"));
+        //console.log(sessionStorage.getItem("password"));
+        //console.log(sessionStorage.getItem("imagePath"));
 
         document.getElementById("no-account").style.position = "absolute";
         document.getElementById("no-account").style.visibility = "hidden";
@@ -19,10 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("account").style.position = "absolute";
         document.getElementById("account").style.visibility = "hidden"; 
     }
-
-
-});
-
 function Exit() {
     if (confirm("Do you confirm log out?") == true) {
         sessionStorage.clear();
