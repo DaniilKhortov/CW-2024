@@ -6,3 +6,30 @@ function InstructionPop() {
 function InstructionUnPop() {
     document.getElementById("instructionText").style.visibility = "hidden";
 }
+
+
+
+
+
+function outlineOn(element) {
+
+    element.querySelector('.account-btn-start img').src = './img/play-gray.png';
+}
+
+function touchOn(element) {
+    element.querySelector('.account-btn-start img').src = './img/play-gray.png';
+}
+
+function outlineOff(element) {
+    element.querySelector('.account-btn-start img').src = './img/play.png';
+
+}
+
+function touchOff(element) {
+    element.querySelector('.account-btn-start img').src = './img/play.png';
+}
+
+
+
+
+

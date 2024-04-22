@@ -3,7 +3,20 @@
         display:none;
 
     }
+    @media screen and (min-width: 690px) {
+        .menu-content {
+            justify-content: space-between;
+        }
 
+        .menu-box {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .box-right {
+            display: flex;
+        }
+    }
     
 }
 @media screen and (min-width: 1300px) {

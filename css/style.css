@@ -655,3 +655,11 @@ textarea {
     border-radius: 5px;
     box-sizing: border-box;
 }
+
+.game-container{
+    margin-top:15px;
+}
+
+.account-btn-pause img{
+    display:none;
+}

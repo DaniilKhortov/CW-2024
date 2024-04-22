@@ -127,8 +127,14 @@
     </div>
     <div class="game-container">
         <div class="button-container">
-            <button class="btn" id="button-pause">||</button>
-            <button class="btn" id="button-start">|></button>
+            <div class="account-btn account-btn-pause" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)"  onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="button-pause">
+                <p id="pauseText">||</p>
+                <img width="17" src="./img/play.png" id="pauseImg" />
+            </div>
+            <div class="account-btn account-btn-start" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)"  onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="button-start">
+                <img width="17" src="./img/play.png" />
+            </div>
+
         </div>
     </div>
 
