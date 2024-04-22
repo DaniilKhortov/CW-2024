@@ -1,5 +1,3 @@
 
-//document.addEventListener('DOMContentLoaded', function () {
-    
-//});
-document.getElementById("appVersion").textContent = "0.0.4a"
+
+document.getElementById("appVersion").textContent = "0.0.5a"

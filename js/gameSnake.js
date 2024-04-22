@@ -162,6 +162,9 @@ function preventScroll(e) {
 }
 
 function togglePause() {
+
+
+
   gamePaused = !gamePaused;
   stopScroll();
 }
