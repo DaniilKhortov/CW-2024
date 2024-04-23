@@ -162,7 +162,11 @@ function preventScroll(e) {
 }
 
 function togglePause() {
-
+    if (document.getElementById("button-pause").classList.contains("reg-btn-red")) {
+        document.getElementById("button-pause").classList.remove("reg-btn-red");
+    } else {
+        document.getElementById("button-pause").classList.add("reg-btn-red");
+    }
 
 
   gamePaused = !gamePaused;

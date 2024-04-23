@@ -54,9 +54,7 @@
         width: 94%;
     }
 
-    .instruction {
-        left: 0%;
-    }
+
 
     .game-container canvas {
         margin-left: 15px;
@@ -65,7 +63,7 @@
     }
 
     .end-content {
-        width: 82%;
+        width: 90%;
     }
 
         .end-content .reg-btn {
@@ -190,7 +188,12 @@
         margin: 0 auto;
         width: auto;
     }
-
+    .instruction-content {
+        width: 60%;
+    }
+    .res-btn p{
+        font-size: inherit;
+    }
 }
 
 
@@ -245,12 +248,10 @@
     }
 
     .instruction-content {
-        width: 80%;
+        width: 50%;
     }
 
-    .instruction {
-        left: 19%;
-    }
+
 
     .game-container canvas {
         margin: 0 auto;
@@ -258,7 +259,7 @@
     }
 
     .end-content {
-        width: 82%;
+        width: 34%;
     }
 
         .end-content .reg-btn {
@@ -369,17 +370,22 @@
 
 
 
+
     .bl-icon-yellow {
         top: -30px;
         right: -25px;
     }
 }
-@media screen and (min-width: 1400px) {
+
+
+@media screen and (min-width: 2000px) {
+
+
     .instruction-content {
-        width: 60%;
+        width: 40%;
     }
-    .instruction {
-        left: 28%;
+    .end-content {
+        width: 20%;
     }
 }
 
@@ -388,6 +394,7 @@
     .review-footer {
         position: fixed;
     }
+
 }
 @media screen and (min-height: 940px) {
     .history-footer {
@@ -406,8 +413,15 @@
         position: fixed;
     }
 }
+@media screen and (min-height: 880px) and (min-width: 1300px) {
+    .leaderboard-footer {
+        position: static;
+    }
+}
+
 @media screen and (min-height: 1050px) and (max-width: 690px){
     .leaderboard-footer {
         position:static;
     }
 }
+
