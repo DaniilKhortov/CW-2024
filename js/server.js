@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const app = express();
 
-app.use(express.static('D:\\Mysor2\\Web-prog\\Kursova\\github\\CW-2024'));//мій шлях, попробуй попрацювати зі своїм
+app.use(express.static('C:\\Users\\Horto\\Documents\\GitHub\\CW-2024'));//мій шлях, попробуй попрацювати зі своїм
 
 app.use(cors());
 app.use(express.json());

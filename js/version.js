@@ -1,3 +1,3 @@
 
 
-document.getElementById("appVersion").textContent = "0.0.5a"
+document.getElementById("appVersion").textContent = "0.0.6b"

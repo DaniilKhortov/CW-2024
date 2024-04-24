@@ -150,12 +150,13 @@
     }
 
     .account-info p {
-        font-size: 21px;
+        font-size: 18px;
     }
 
     .account-image img {
         margin-left: 30px;
         margin-bottom: 10px;
+        display:none;
     }
 
     .bl-icon-yellow {
@@ -194,12 +195,16 @@
     .res-btn p{
         font-size: inherit;
     }
+    .account-image img {
+        display: block;
+    }
 }
 
 
 
 
 @media screen and (min-width: 1300px) {
+
     header {
         height: 140px;
     }
@@ -364,7 +369,9 @@
         position: fixed;
     }
 
-
+    .leaderboard-footer {
+        position: static;
+    }
 
 
 
@@ -394,7 +401,9 @@
     .review-footer {
         position: fixed;
     }
-
+    .leaderboard-footer {
+        position: static;
+    }
 }
 @media screen and (min-height: 940px) {
     .history-footer {
@@ -406,22 +415,25 @@
     .register-footer{
         position:fixed;
     }
+
+
 }
 
 @media screen and (min-height: 1050px) {
     .leaderboard-footer {
         position: fixed;
     }
-}
-@media screen and (min-height: 880px) and (min-width: 1300px) {
-    .leaderboard-footer {
-        position: static;
-    }
+
 }
 
-@media screen and (min-height: 1050px) and (max-width: 690px){
-    .leaderboard-footer {
-        position:static;
-    }
+
+
+
+
+
+@media screen and (min-height: 880px) and (min-width: 1300px) {
+
 }
+
+
 
