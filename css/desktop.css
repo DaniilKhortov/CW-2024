@@ -20,9 +20,15 @@
         height: 53px;
         font-size: 26px;
     }
+    .btn-red {
+        display: none
+    }
 
     .register {
         height: 80px;
+    }
+    .registeri-index {
+        height: 60px;
     }
 
     .options-content {
@@ -150,13 +156,12 @@
     }
 
     .account-info p {
-        font-size: 18px;
+        font-size: 21px;
     }
-
     .account-image img {
+        width: 50px;
         margin-left: 30px;
         margin-bottom: 10px;
-        display:none;
     }
 
     .bl-icon-yellow {
@@ -164,7 +169,14 @@
         right: -39px;
     }
 }
-
+@media screen and (min-width: 450px) {
+    .btn-red {
+        display: flex;
+    }
+    .btn-red-snake {
+        display: none;
+    }
+}
 
 @media screen and (min-width: 690px) {
     .menu-content {
@@ -197,9 +209,23 @@
     }
     .account-image img {
         display: block;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        margin-right: 10px;
+        width: 60px;
     }
+    .bl-icon-yellow {
+        top: -30px;
+        right: -25px;
+    }
+
 }
 
+@media screen and (min-width: 880px) {
+    .btn-red-snake {
+        display: flex;
+    }
+}
 
 
 
@@ -373,7 +399,10 @@
         position: static;
     }
 
+    .account-image img {
+        width: 60px;
 
+    }
 
 
 
