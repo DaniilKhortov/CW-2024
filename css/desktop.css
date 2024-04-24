@@ -395,9 +395,7 @@
         position: fixed;
     }
 
-    .leaderboard-footer {
-        position: static;
-    }
+
 
     .account-image img {
         width: 60px;
@@ -448,21 +446,22 @@
 
 }
 
-@media screen and (min-height: 1050px) {
+@media screen and (min-width: 690px) and (max-width: 1299px) and (min-height: 1000px) {
     .leaderboard-footer {
         position: fixed;
     }
+}
 
+
+@media screen and (min-width: 1300px) and (min-height: 1060px) {
+    .leaderboard-footer {
+        position: fixed;
+    }
 }
 
 
 
 
-
-
-@media screen and (min-height: 880px) and (min-width: 1300px) {
-
-}
 
 
 
