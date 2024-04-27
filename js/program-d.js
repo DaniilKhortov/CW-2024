@@ -1,4 +1,12 @@
+document.getElementById("instructionBtn").addEventListener("click", InstructionPop);
+document.getElementById("crossBtnSnake").addEventListener("click", InstructionUnPop);
 
+function InstructionUnPop() {
+    document.getElementById("instructionText").style.display = "none";
+}
+function InstructionPop() {
+    document.getElementById("instructionText").style.display = "block";
+}
 
 
 

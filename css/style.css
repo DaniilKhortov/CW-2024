@@ -94,6 +94,8 @@ footer {
     color: white;
 }
 
+
+
 .version {
     margin-right: 50px;
     font-family: Roboto;
@@ -182,12 +184,12 @@ header h1 {
     background-color: red;
 }
 
-    .reg-btn:hover, .account-btn:hover, .reg-btn:active, .account-btn:active {
-        background: white;
-        box-shadow: 0px 0px 5px 1px grey;
-        cursor: pointer;
-        color: #666666;
-    }
+.reg-btn:hover, .account-btn:hover, .reg-btn:active, .account-btn:active {
+    background: white;
+    box-shadow: 0px 0px 5px 1px grey;
+    cursor: pointer;
+    color: #666666;
+}
 
 .options-content {
     display: flex;
@@ -231,14 +233,16 @@ header h1 {
     display: flex;
     justify-content: center;
 }
-
+/*.options-content {
+    position: absolute;
+    top: 20%;
+}*/
 .instruction, .restart-game {
     position: absolute;
     margin-bottom: 20px;
-
     visibility: hidden;
     margin-top: 30px;
-    width:100%;
+    width: 100%;
 }
 
 
@@ -253,7 +257,6 @@ header h1 {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
 }
 
     .instruction-content .title {
@@ -325,9 +328,9 @@ header h1 {
     padding-left: 50px;
 }
 
-.register-field p{
-    margin-top:15px;
-}
+    .register-field p {
+        margin-top: 15px;
+    }
 
 .register-btn {
     text-align: center;
@@ -367,6 +370,10 @@ header h1 {
     border-radius: 50%;
 }
 
+    .account-image img:hover {
+        cursor: pointer;
+        filter: drop-shadow(0px 0px 5px gray);
+    }
 
     .regSection-content img:hover {
         cursor: pointer;
@@ -383,6 +390,12 @@ header h1 {
     margin-top: auto;
     margin-bottom: auto;
 }
+
+    .account-info:hover, .account-info:active {
+        cursor: pointer;
+        filter: drop-shadow(0 0 0.75rem gray)
+    }
+
 
     .account-info p {
         font-family: Rubik;
@@ -611,6 +624,7 @@ header h1 {
     justify-content: center;
     margin: 0 auto;
 }
+
 .bl-icon-blue {
     background: linear-gradient(90deg, rgba(0,188,233,1) 0%, rgba(5,177,205,1) 100%);
 }
@@ -622,9 +636,11 @@ header h1 {
 .bl-icon-red {
     background: linear-gradient(90deg, rgba(255, 68, 76,1) 0%, rgba(210, 11, 26, 1) 100%);
 }
+
 .bl-icon-purple {
     background: linear-gradient(90deg, #8a0fd7 0%, #A020F0 100%);
 }
+
 .boarder-icon {
     width: 30px;
     height: 30px;
@@ -638,9 +654,9 @@ header h1 {
 }
 
 .desc-bl {
-    
     margin-top: 15px;
 }
+
 .desc-bl-content {
     width: 70%;
     text-align: left;
@@ -648,30 +664,101 @@ header h1 {
     font-size: 32px;
     color: grey;
 }
+
     .desc-bl-content .small-title {
         margin-top: 20px;
         font-size: 40px;
         color: #565656;
-        
     }
+
     .desc-bl-content p {
         margin-bottom: 5px;
     }
 
 textarea {
     width: 50%;
-    height:300px;
+    height: 300px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    font-family: 'Roboto Condensed';
+    font-size: 18px;
 }
 
-.game-container{
-    margin-top:15px;
+.game-container {
+    margin-top: 15px;
 }
 
-.account-btn-pause img{
-    display:none;
+.account-btn-pause img {
+    display: none;
+}
+
+
+
+.instruction-index {
+    visibility: visible;
+    display: none;
+}
+
+    .instruction-index .instruction-content {
+        padding: 15px 50px 10px 50px;
+        background: #a2a2a2;
+    }
+
+        .instruction-index .instruction-content .desc-text {
+            color: white;
+        }
+
+        .instruction-index .instruction-content .title {
+            color: white;
+        }
+
+.stat-box {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.stat-box-left {
+    text-align: left;
+    font-size: 25px;
+}
+
+.stat-box-right {
+    text-align: right;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.btn-rev img {
+    transform: rotate(180deg);
+}
+
+
+.custom-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.subtitle {
+    margin-top:20px;
+    margin-bottom:10px;
+    font-size: 26px;
+    font-weight:600;
+}
+.custom-box-item {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.color-box {
+    background: green;
+    width: 40px;
+    height: 40px;
+}
+
+.account-btn-custom{
+    width:166px;
 }

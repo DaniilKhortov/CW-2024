@@ -101,6 +101,52 @@
         </div>
     </div>
 
+
+    <div class="instruction InstOn" id="customWindow">
+        <div class="instruction-content custom-content">
+            <div class="desc-text">
+
+                <div class="snake-exit-btn" id="crossBtnSnake2">
+                    <img src="./img/cross.png" width="30" />
+                </div>
+                <p class="title">Кастомізація</p>
+                <p class="subtitle">Колір змійки</p>
+                <div class="custom-box">
+                    <div class="account-btn account-btn-start btn-rev custom-box-item" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="buttonLeft1">
+                        <img width="17" src="./img/play.png" />
+                    </div>
+                    <div class="color-box custom-box-item" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="colorBox">
+
+                    </div>
+
+                    <div class="account-btn account-btn-start custom-box-item" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="buttonRight1">
+                        <img width="17" src="./img/play.png" />
+                    </div>
+
+                </div>
+                <p class="subtitle">Їжа</p>
+                <div class="custom-box">
+                    <div class="account-btn account-btn-start btn-rev custom-box-item" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="buttonLeft2">
+                        <img width="17" src="./img/play.png" />
+                    </div>
+                    <div class="food-img custom-box-item" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="foodBox">
+                        <img width="40" src="./img/food.png" />
+                    </div>
+
+                    <div class="account-btn account-btn-start custom-box-item" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="buttonRight2">
+                        <img width="17" src="./img/play.png" />
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="instruction" id="exitWindow">
         <div class="instruction-content end-content">
             <div class="desc-text">
@@ -127,16 +173,20 @@
     </div>
     <div class="game-container">
         <div class="button-container">
-            <div class="account-btn account-btn-pause" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)"  onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="button-pause">
+            <div class="account-btn account-btn-pause" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="button-pause">
                 <p id="pauseText">||</p>
                 <img width="17" src="./img/play.png" id="pauseImg" />
             </div>
-            <div class="account-btn account-btn-start" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)"  onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="button-start">
+            <div class="account-btn account-btn-start" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="button-start">
                 <img width="17" src="./img/play.png" />
             </div>
+            <div class="account-btn account-btn-custom" onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" id="button-custom">
+                <p id="pauseText">Кастомізувати</p>
 
+            </div>
         </div>
     </div>
+
 
     <footer>
         <div class="register-content ">
@@ -154,9 +204,12 @@
     <!--script section-->
 
     <script src="./js/gameSnake.js"></script>
+
     <script type="text/javascript" async="" src="./js/snake.js"></script>
+
     <script type="text/javascript" async="" src="./js/account.js"></script>
     <script type="text/javascript" async="" src="./js/version.js"></script>
+
 </body>
 </html>
 

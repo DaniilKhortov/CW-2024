@@ -53,7 +53,7 @@
                 <div class="account-image">
                     <img width="60" id="accountImg" src="./img/icon0.png" />
                 </div>
-                <div class="account-info">
+                <div class="account-info"  id="instructionBtn">
                     <p id="accountName">No name</p>
                 </div>
                 <div class="account-btn" id="accountExit">
@@ -70,10 +70,46 @@
 
     </div>
 
+    <div class="instruction instruction-index" id="instructionText">
+        <div class="instruction-content">
+            <div class="desc-text">
+                <div class="snake-exit-btn" id="crossBtnSnake">
+                    <img src="./img/cross.png" width="30" />
+                </div>
+                <p class="title">Статистика</p>
+                <div class="stat-box">
+                    <p class="stat-box-left">Нік:</p>
+                    <p class="stat-box-right" id="statRecord">0</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-box-left">Дата реєстрації:</p>
+                    <p class="stat-box-right" id="statMatch">0</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-box-left">Рекорд:</p>
+                    <p class="stat-box-right" id="statRecord">0</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-box-left">Зіграно матчів:</p>
+                    <p class="stat-box-right" id="statMatch">0</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-box-left">Яблук зібрано:</p>
+                    <p class="stat-box-right" id="statMatch">0</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-box-left">Дата реєстрації:</p>
+                    <p class="stat-box-right" id="statMatch">0</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <div class="options">
         <div class="options-content">
 
-            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)"  onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-1">
+            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-1">
                 <a href="snake.html">
                     <div class="bl-btn-icon">
                         <img width="125" src="./img/controller.png" />
@@ -87,7 +123,7 @@
 
 
 
-            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)"  onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-2">
+            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-2">
                 <a href="leaderBoard.html" id="accountLinkCheck">
                     <div class="bl-btn-icon">
                         <img width="125" src="./img/liderboard.png" />
@@ -98,7 +134,7 @@
                     </div>
                 </a>
             </div>
-            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)"  onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-3">
+            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-3">
                 <a href="history.html" id="accountLinkCheck2">
                     <div class="bl-btn-icon">
                         <img width="125" src="./img/history.png" />
@@ -109,7 +145,7 @@
                     </div>
                 </a>
             </div>
-            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)"  onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-4">
+            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-4">
                 <a href="versionLog.html">
                     <div class="bl-btn-icon">
                         <img width="125" src="./img/update.png" />
@@ -120,7 +156,7 @@
                     </div>
                 </a>
             </div>
-            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)"  onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-5">
+            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-5">
                 <a href="description.html">
                     <div class="bl-btn-icon">
                         <img width="125" src="./img/question.png" />
@@ -131,7 +167,7 @@
                     </div>
                 </a>
             </div>
-            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)"  onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-6">
+            <div onmouseover="outlineOn(this)" ontouchstart="touchOn(this)" onmouseout="outlineOff(this)" ontouchend="touchOff(this)" class="bl-btn" id="bl-6">
                 <a href="review.html">
                     <div class="bl-btn-icon">
                         <img width="125" src="./img/dev.png" />
@@ -142,9 +178,17 @@
                     </div>
                 </a>
             </div>
+
+            </div>
+
         </div>
 
     </div>
+
+
+
+
+
     <footer class="index-footer">
         <div class="register-content ">
 

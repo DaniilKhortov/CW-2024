@@ -306,6 +306,9 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .review-content {
+        width: 80%;
+    }
 
     .register-field {
         padding-left: 50px;
@@ -404,7 +407,6 @@
 
 
 
-
     .bl-icon-yellow {
         top: -30px;
         right: -25px;
@@ -413,7 +415,9 @@
 
 
 @media screen and (min-width: 2000px) {
-
+    .review-content {
+        width: 50%;
+    }
 
     .instruction-content {
         width: 40%;

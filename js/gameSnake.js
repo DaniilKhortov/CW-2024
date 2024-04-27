@@ -2,7 +2,7 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
 const ground = new Image(), foodImg = new Image(), foodSuper = new Image();
-ground.src = "img/ground.png";
+ground.src = "img/ground-fixed.png";
 foodImg.src = "img/food3.png";
 foodSuper.src = "img/foodS.png";
 
