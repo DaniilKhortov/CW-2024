@@ -5,7 +5,7 @@ const ground = new Image(), foodImg = new Image(), foodSuper = new Image();
 ground.src = "img/ground-fixed.png";
 foodImg.src = "img/food3.png";
 foodSuper.src = "img/foodS.png";
-
+let skin = "green";
 let box = 32, score = 0, time = 400,  game, specialFood = null;
 let touchStartX = null, touchStartY = null, dir, gamePaused = false;
 
@@ -103,7 +103,7 @@ function drawGame() {
   }
 
   for(let i = 0; i < snake.length; i++) {
-    ctx.fillStyle = i == 0 ? "green" : "green";
+      ctx.fillStyle = i == 0 ? skin : skin;
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
   }
 
@@ -180,10 +180,20 @@ function startGame() {
   game = setInterval(drawGame, time); 
 }
 
-function starting(){
+function starting() {
+    if (sessionStorage.getItem("foodSkin") !== null) {
+        foodImg.src = sessionStorage.getItem("foodSkin");
+    }
+    if (sessionStorage.getItem("colorSkin") !== null) {
+        skin = sessionStorage.getItem("colorSkin");
+    }
+    if (sessionStorage.getItem("foodSSkin") !== null) {
+        foodSuper.src = sessionStorage.getItem("foodSSkin");
+    }
     startGame();
     document.getElementById("button-start").style.display = "none";
 }
+
 
 function gameOver() {
   stopScroll();
