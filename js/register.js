@@ -68,6 +68,10 @@ function Register() {
         alert("Registration Error: Email address is invalid!");
         return;
     }
+    if (nickname>=13) {
+        alert("Registration Error: Nickname must be shorter than 12 synmols!");
+        return;
+    }
     if (validatePassword(password) === false) {
         alert("Password must contain one uppercase letter, one undercase letter, one digit and one spacial symbol. The minimal length of password is 8 symbols!");
         return;

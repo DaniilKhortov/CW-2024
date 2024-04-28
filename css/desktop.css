@@ -59,7 +59,16 @@
     .instruction-content {
         width: 94%;
     }
+    .stat-box-left {
+        font-size: 14px;
+    }
 
+    .stat-box-right {
+        font-size: 20px;
+    }
+    .stat-email{
+        font-size:14px;
+    }
 
 
     .game-container canvas {
@@ -168,7 +177,15 @@
         top: -36px;
         right: -39px;
     }
+    .button-container {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
 }
+
 @media screen and (min-width: 450px) {
     .btn-red {
         display: flex;
@@ -176,6 +193,12 @@
     .btn-red-snake {
         display: none;
     }
+    .button-container {
+        display: flex;
+        flex-direction: row;
+    }
+    
+
 }
 
 @media screen and (min-width: 690px) {
@@ -218,18 +241,51 @@
         top: -30px;
         right: -25px;
     }
+    .stat-box-left {
+        font-size: 25px;
+    }
+
+    .stat-box-right {
+        font-size: 30px;
+    }
+
+    .stat-email {
+        font-size: 16px;
+    }
+
+
+    .stat-date {
+        font-size: 30px;
+    }
 
 }
 
 @media screen and (min-width: 880px) {
+    .stat-box-left {
+        font-size: 25px;
+    }
+
+    .stat-box-right {
+        font-size: 30px;
+    }
     .btn-red-snake {
         display: flex;
     }
+    .stat-email {
+        font-size: 26px;
+    }
+    .stat-date {
+        font-size: 30px;
+    }
+
 }
 
 
 
 @media screen and (min-width: 1300px) {
+    .stat-email {
+        font-size: 30px;
+    }
 
     header {
         height: 140px;
