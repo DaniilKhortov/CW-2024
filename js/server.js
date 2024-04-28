@@ -6,8 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const app = express();
 
-app.use(express.static('C:\\Users\\Horto\\Documents\\GitHub\\CW-2024'));//мій шлях, попробуй попрацювати зі своїм
-
+app.use(express.static('D:\\Mysor2\\Web-prog\\Kursova\\github\\CW-2024'));//C:\\Users\\Horto\\Documents\\GitHub\\CW-2024
 app.use(cors());
 app.use(express.json());
 
@@ -39,6 +38,14 @@ const gameHistorySchema = new mongoose.Schema({
 });
 
 const GameHistory = mongoose.model('GameHistory', gameHistorySchema);
+
+const responseSchema = new mongoose.Schema({
+  email: String,
+  text: String
+});
+
+const Response = mongoose.model('Response', responseSchema);
+
 app.post('/register', async (req, res) => {
   const { email, nickname } = req.body;
   try {
@@ -149,6 +156,20 @@ app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
 
+app.post('/addResponse', (req, res) => {
+  const { email, text } = req.body; 
+
+  const newResponse = new Response({ email, text });
+
+  newResponse.save()
+    .then(() => {
+      res.status(201).send('Response added successfully');
+    })
+    .catch(error => {
+      console.error('Error adding response:', error);
+      res.status(500).send('Error adding response');
+    });
+});
 
 /*const express = require('express');
 const cors = require('cors');

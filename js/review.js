@@ -1,18 +1,31 @@
+
 document.getElementById("revBtn").addEventListener("click", Register);
 function Register() {
-    let email = document.getElementById('email').value;
-
+    let tempEmail = document.getElementById('email').value;
+    let text = document.getElementById('message').value;
 
     function validateRealisticEmail(email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@(gmail\.com|yahoo\.com|outlook\.com)$/;
+        let re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@(gmail\.com|yahoo\.com|outlook\.com)$/;
         return re.test(String(email).toLowerCase());
     }
 
-    if (validateRealisticEmail(email) === false) {
+    if (validateRealisticEmail(tempEmail) === false) {
         alert("Error: Email address is invalid!");
         return;
     }
 
+    const response = {
+        email: tempEmail,
+        text: text
+    };
+    fetch('/addResponse', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(response)
+    })
+    .then(response => response.json())
+    .then(data => console.log(data.message))
+    .catch(error => console.error('Error:', error));
     alert("Feedback submited!");
     window.location.replace("index.html");
 

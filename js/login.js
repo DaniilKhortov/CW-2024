@@ -26,8 +26,10 @@ function Login() {
             //sessionStorage.setItem("token", data.token);
             sessionStorage.setItem("email", data.user.email);
             sessionStorage.setItem("nickname", data.user.nickname);
-            sessionStorage.setItem("imagePath",  data.user.imagePath);
-            alert("Log in completed!");
+            sessionStorage.setItem("imagePath", data.user.imagePath);
+            sessionStorage.setItem("record", data.user.record);
+            sessionStorage.setItem("registrationDate", data.user.registrationDate);
+            alert("Log in completed!"); 
             window.location.replace("index.html");
         } else {
             console.error('User data is missing in the response');
