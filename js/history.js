@@ -12,7 +12,7 @@ function fetchGames() {
           document.getElementById(`matchName${i+1}`).textContent = 'Гра '+(games.length-(i + currentPage * gamesPerPage));  
           document.getElementById(`date${i + 1}`).textContent = new Date(game.date).toLocaleDateString();
           document.getElementById(`result${i + 1}`).textContent = game.score;
-          document.getElementById(`version${i+1}`).textContent = '0.0.4a';
+          document.getElementById(`version${i+1}`).textContent = game.version;
         } else {
           document.getElementById(`matchName${i+1}`).textContent = 'Гра Ендера';  
           document.getElementById(`date${i + 1}`).textContent = '';

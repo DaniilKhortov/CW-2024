@@ -206,7 +206,8 @@ function gameOver() {
     const gameHistory = {
       nickname: tempNickname,
       date: new Date(),
-      score: score
+      score: score,
+      version: sessionStorage.getItem("version")
     };
     fetch('/gameHistory', {
       method: 'POST',
@@ -227,7 +228,7 @@ function gameOver() {
         fetch(`/updateUserRecord/${sessionStorage.getItem("nickname")}`, {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ record: score })
+          body: JSON.stringify({ record: score, version: sessionStorage.getItem("version") })
         })
         .then(response => response.json())
         .then(data => console.log(data.message))

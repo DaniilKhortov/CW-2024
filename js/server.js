@@ -26,7 +26,8 @@ const playerSchema = new mongoose.Schema({
   registrationDate: {
     type: Date,
     default: Date.now
-  }
+  },
+  version: String
 });
 
 const User = mongoose.model('Player', playerSchema);
@@ -34,7 +35,8 @@ const User = mongoose.model('Player', playerSchema);
 const gameHistorySchema = new mongoose.Schema({
   nickname: String,
   date: Date,
-  score: Number
+  score: Number,
+  version: String
 });
 
 const GameHistory = mongoose.model('GameHistory', gameHistorySchema);
@@ -99,9 +101,9 @@ app.get('/leaderBoard', async (req, res) => {
 });
 
 app.post('/gameHistory', async (req, res) => {
-  const { nickname, date, score } = req.body;
+  const { nickname, date, score, version } = req.body;
   try {
-    const gameHistory = new GameHistory({ nickname, date, score });
+    const gameHistory = new GameHistory({ nickname, date, score, version });
     await gameHistory.save();
     res.json({ message: 'Game history saved!' });
   } catch (err) {
@@ -136,7 +138,7 @@ app.get('/getUserRecord/:nickname', async (req, res) => {
 
 app.post('/updateUserRecord/:nickname', async (req, res) => {
   const { nickname } = req.params;
-  const { record } = req.body;
+  const { record, version } = req.body;
   try {
     const user = await User.findOne({ nickname: nickname });
 
@@ -145,6 +147,7 @@ app.post('/updateUserRecord/:nickname', async (req, res) => {
     }
 
     user.record = record;
+    user.version = version;
     await user.save();
 
     res.json({ message: 'Record updated!' });

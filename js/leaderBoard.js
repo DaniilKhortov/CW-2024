@@ -8,7 +8,7 @@ fetch('/leaderBoard')
       //console.log( new Date(users[i].registrationDate).toLocaleDateString());
       document.getElementById(`leaderDate${i + 1}`).textContent = new Date(users[i].registrationDate).toLocaleDateString();
       document.getElementById(`leaderResult${i+1}`).textContent = users[i].record;
-      document.getElementById(`leaderVersion${i+1}`).textContent = '0.0.0';
+      document.getElementById(`leaderVersion${i+1}`).textContent = users[i].version;
     }
       
   })
