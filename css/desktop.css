@@ -23,6 +23,11 @@
     .btn-red {
         display: none
     }
+    .reg-btn-orange {
+        display:none;
+
+    }
+
 
     .register {
         height: 80px;
@@ -183,10 +188,18 @@
         justify-content:center;
         align-items:center;
     }
+    .add-block {
+        margin-top: 10px;
+        background-position: center bottom;
+        background-image: url(../img/add2.png);
+        width: 88%;
+        height: 80px;
+    }
 
 }
 
 @media screen and (min-width: 450px) {
+
     .btn-red {
         display: flex;
     }
@@ -197,11 +210,18 @@
         display: flex;
         flex-direction: row;
     }
-    
+
 
 }
 
 @media screen and (min-width: 690px) {
+    .add-block {
+        margin-top: 10px;
+        background-position: center bottom;
+        background-image: url(../img/add2.png);
+        width: 90%;
+        height: 80px;
+    }
     .menu-content {
         justify-content: space-between;
     }
@@ -257,10 +277,20 @@
     .stat-date {
         font-size: 30px;
     }
+    .reg-btn-orange {
+        display: flex;
+    }
 
 }
 
 @media screen and (min-width: 880px) {
+    .add-block {
+        margin-top: 10px;
+        background-position: center bottom;
+        background-image: url(../img/add2.png);
+        width: 88%;
+        height: 80px;
+    }
     .stat-box-left {
         font-size: 25px;
     }
@@ -283,6 +313,13 @@
 
 
 @media screen and (min-width: 1300px) {
+    .add-block {
+        margin-top: 10px;
+        background-position: center bottom;
+        background-image: url(../img/add2.png);
+        width: 1300px;
+        height: 80px;
+    }
     .stat-email {
         font-size: 30px;
     }
@@ -485,6 +522,7 @@
 
 
 @media screen and (min-height: 880px) {
+
     .review-footer {
         position: fixed;
     }
