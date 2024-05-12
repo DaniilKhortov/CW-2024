@@ -167,6 +167,10 @@ function togglePause() {
     } else {
         document.getElementById("button-pause").classList.add("reg-btn-red");
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 
   gamePaused = !gamePaused;

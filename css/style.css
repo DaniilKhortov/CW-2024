@@ -184,6 +184,7 @@ header h1 {
     background-color: red;
 }
 
+<<<<<<< Updated upstream
 
 
 .reg-btn:hover, .account-btn:hover, .reg-btn:active, .account-btn:active {
@@ -193,6 +194,14 @@ header h1 {
     color: #666666;
 }
 
+=======
+    .reg-btn:hover, .account-btn:hover, .reg-btn:active, .account-btn:active {
+        background: white;
+        box-shadow: 0px 0px 5px 1px grey;
+        cursor: pointer;
+        color: #666666;
+    }
+>>>>>>> Stashed changes
 
 .options-content {
     display: flex;
@@ -236,6 +245,7 @@ header h1 {
     display: flex;
     justify-content: center;
 }
+<<<<<<< Updated upstream
 /*.options-content {
     position: absolute;
     top: 20%;
@@ -246,6 +256,16 @@ header h1 {
     visibility: hidden;
     margin-top: 30px;
     width: 100%;
+=======
+
+.instruction, .restart-game {
+    position: absolute;
+    margin-bottom: 20px;
+
+    visibility: hidden;
+    margin-top: 30px;
+    width:100%;
+>>>>>>> Stashed changes
 }
 
 
@@ -260,6 +280,10 @@ header h1 {
     right: 0;
     margin-left: auto;
     margin-right: auto;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 }
 
     .instruction-content .title {
