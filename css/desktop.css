@@ -64,14 +64,9 @@
     .instruction-content {
         width: 94%;
     }
-<<<<<<< Updated upstream
     .stat-box-left {
         font-size: 14px;
     }
-=======
-
-
->>>>>>> Stashed changes
 
     .stat-box-right {
         font-size: 20px;
@@ -255,7 +250,6 @@
     .res-btn p{
         font-size: inherit;
     }
-<<<<<<< Updated upstream
     .account-image img {
         display: block;
         margin-left: 0px;
@@ -314,8 +308,6 @@
         font-size: 30px;
     }
 
-=======
->>>>>>> Stashed changes
 }
 
 
@@ -508,7 +500,6 @@
 
 
 
-
     .bl-icon-yellow {
         top: -30px;
         right: -25px;
@@ -517,7 +508,6 @@
 
 
 @media screen and (min-width: 2000px) {
-<<<<<<< Updated upstream
     .review-content {
         width: 50%;
     }
@@ -525,17 +515,11 @@
     .instruction-content {
         width: 40%;
     }
-=======
-
-
-    .instruction-content {
-        width: 40%;
-    }
->>>>>>> Stashed changes
     .end-content {
         width: 20%;
     }
 }
+
 
 @media screen and (min-height: 880px) {
 
