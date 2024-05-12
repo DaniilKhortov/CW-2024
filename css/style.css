@@ -184,12 +184,9 @@ header h1 {
     background-color: red;
 }
 
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 
 
-=======
->>>>>>> parent of a3feeb4 (Add Support)
 .reg-btn:hover, .account-btn:hover, .reg-btn:active, .account-btn:active {
     background: white;
     box-shadow: 0px 0px 5px 1px grey;
@@ -197,7 +194,6 @@ header h1 {
     color: #666666;
 }
 
-<<<<<<< HEAD
 =======
     .reg-btn:hover, .account-btn:hover, .reg-btn:active, .account-btn:active {
         background: white;
@@ -207,8 +203,6 @@ header h1 {
     }
 >>>>>>> Stashed changes
 
-=======
->>>>>>> parent of a3feeb4 (Add Support)
 .options-content {
     display: flex;
     flex-wrap: wrap;
@@ -445,6 +439,28 @@ header h1 {
     margin-bottom: auto;
 }
 
+.reg-btn-orange {
+    background-color: #F96854;
+    width: 165px;
+    height: 60px;
+}
+    .reg-btn-orange:hover, .reg-btn-orange:active {
+        cursor: pointer;
+        filter: drop-shadow(0 0 0.75rem #F96854);
+        color: #F96854;
+
+    }
+.reg-btn-yellow {
+    background-color: #ffdf01;
+    width: 165px;
+    height: 60px;
+}
+
+    .reg-btn-yellow:hover, .reg-btn-yellow:active {
+        cursor: pointer;
+        filter: drop-shadow(0 0 0.75rem #ffdf01);
+        color: #ffdf01;
+    }
 .btn-red:hover {
     background: red;
     color: white;
@@ -798,6 +814,26 @@ textarea {
 
 .account-btn-custom{
     width:166px;
+}
+
+
+
+.add-content {
+    display:flex;
+    justify-content:center;
+    text-align:center;
+}
+
+.add-block {
+    margin-top: 10px;
+    background-position: center bottom;
+    background-image: url(../img/add2.png);
+    width: 1300px;
+    height: 80px;
+}
+
+.add-block:hover{
+    cursor:pointer;
 }
 
 /*.button-container-left{
