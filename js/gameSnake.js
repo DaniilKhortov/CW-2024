@@ -5,7 +5,7 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
 const ground = new Image(), foodImg = new Image(), foodSuper = new Image();
-ground.src = "img/ground-fixed.png";
+ground.src = "img/groundDefault.png";
 foodImg.src = "img/food3.png";
 foodSuper.src = "img/foodS.png";
 let skin = "green";
@@ -70,7 +70,7 @@ canvas.addEventListener('touchmove', function (e) {
 
 
 async function checkWeather(city) {
-
+    console.log(city);
     try {
         // Make API call to fetch weather data
         const response = await fetch(`${apiUrl}&q=${city}&appid=${apiKey}`);
@@ -110,6 +110,44 @@ async function checkWeather(city) {
         console.error(error);
     }
 
+}
+
+function geoFindMe() {
+    return new Promise((resolve, reject) => {
+        function success(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+                .then(response => response.json())
+                .then(data => {
+                    const city = data.address.city || data.address.town || data.address.village || "Алжир";
+                    resolve(city);
+                })
+                .catch(error => {
+                    reject("Алжир");
+                });
+        }
+
+        function error() {
+            reject("Алжир");
+        }
+
+        if (!navigator.geolocation) {
+            reject("Алжир");
+        } else {
+            navigator.geolocation.getCurrentPosition(success, error);
+        }
+    });
+}
+
+async function main() {
+    try {
+        const city = await geoFindMe();
+        await checkWeather(city);
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 
@@ -240,8 +278,12 @@ function starting() {
     if (sessionStorage.getItem("foodSSkin") !== null) {
         foodSuper.src = sessionStorage.getItem("foodSSkin");
     }
-    checkWeather("Kyiv");
+    var city = geoFindMe();
+
+    main();
+
     startGame();
+
     document.getElementById("button-start").style.display = "none";
 }
 
