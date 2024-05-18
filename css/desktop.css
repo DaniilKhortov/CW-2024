@@ -526,15 +526,9 @@
     .review-footer {
         position: fixed;
     }
-    .leaderboard-footer {
-        position: static;
-    }
+
 }
-@media screen and (min-height: 940px) {
-    .history-footer {
-        position: fixed;
-    }
-}
+
 
 @media screen and (min-height: 1000px) {
     .register-footer{
@@ -544,18 +538,72 @@
 
 }
 
-@media screen and (min-width: 690px) and (max-width: 1299px) and (min-height: 1000px) {
-    .leaderboard-footer {
+
+
+@media screen and (min-width: 350px) and (max-height:899px) {
+    .history-footer {
+        position: static;
+    }
+}
+
+@media screen and (min-width: 350px) and (min-height:900px) {
+    .history-footer {
         position: fixed;
     }
 }
 
 
-@media screen and (min-width: 1300px) and (min-height: 1060px) {
+@media screen and (min-width: 690px) and (max-height:850px) {
+    .history-footer {
+        position: static;
+    }
+}
+
+@media screen and (min-width: 690px) and (min-height:851px) {
+    .history-footer {
+        position: fixed;
+    }
+}
+
+@media screen and (min-width: 1300px) and (max-height:816px) {
+    .history-footer {
+        position: static;
+        margin-top: 8px;
+    }
+}
+
+@media screen and (min-width: 1300px) and (min-height:817px) {
+    .history-footer {
+        position: fixed;
+        margin-top: 0px;
+    }
+}
+
+
+@media screen and (min-width: 350px) {
+    .leaderboard-footer {
+        position: static;
+    }
+}
+
+@media screen and (min-width: 690px) and (max-height:999px) {
+    .leaderboard-footer {
+        position: static;
+    }
+}
+
+@media screen and (min-width: 690px) and (min-height:1000px) {
     .leaderboard-footer {
         position: fixed;
     }
 }
+
+@media screen and (min-width: 1300px) and (max-height:1058px) {
+    .leaderboard-footer {
+        position: static;
+    }
+}
+
 
 
 
