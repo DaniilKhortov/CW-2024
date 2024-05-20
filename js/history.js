@@ -1,4 +1,4 @@
-let currentPage = 0;
+let currentPage = 0, allGameslength;
 const gamesPerPage = 5;
 
 function fetchGames() {
@@ -7,17 +7,17 @@ function fetchGames() {
     .then(games => {
       for (let i = 0; i < gamesPerPage; i++) {
         const game = games[i + currentPage * gamesPerPage];
+        allGameslength = (games.length / 5) -1;
+        console.log(allGameslength);
         if (game) {
           //console.log(`Game ${i + 1}:`, game);
           document.getElementById(`matchName${i+1}`).textContent = 'Гра '+(games.length-(i + currentPage * gamesPerPage));  
           document.getElementById(`date${i + 1}`).textContent = new Date(game.date).toLocaleDateString();
           document.getElementById(`result${i + 1}`).textContent = game.score;
-          document.getElementById(`version${i+1}`).textContent = game.version;
+          document.getElementById(`version${i + 1}`).textContent = game.version;
+          document.getElementById(`reality${i+1}`).style.display = "flex";
         } else {
-          document.getElementById(`matchName${i+1}`).textContent = 'Гра Ендера';  
-          document.getElementById(`date${i + 1}`).textContent = '';
-          document.getElementById(`result${i + 1}`).textContent = '';
-          document.getElementById(`version${i+1}`).textContent = '';
+          document.getElementById(`reality${i+1}`).style.display = "none";
         }
       }
     })
@@ -32,7 +32,9 @@ document.getElementById('btn-back').addEventListener('click', () => {
 });
 
 document.getElementById('btn-forw').addEventListener('click', () => {
-  currentPage++;
-  fetchGames();
+  if (currentPage < allGameslength) {
+    currentPage++;
+    fetchGames();
+  }
 });
 fetchGames();
