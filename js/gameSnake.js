@@ -318,6 +318,7 @@ function gameOver() {
             .then(response => response.json())
             .then(data => {
                 if (score > data.record) {
+                    sessionStorage.setItem("record", score);
                     fetch(`/updateUserRecord/${sessionStorage.getItem("nickname")}`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },

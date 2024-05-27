@@ -1,10 +1,6 @@
 document.getElementById("accountExit").addEventListener("click", Exit);
 
-//document.addEventListener('DOMContentLoaded', function () {
-    
 
-
-//});
 if (sessionStorage.getItem("email") !== null) {
     document.getElementById("no-account").style.position = "absolute";
     document.getElementById("no-account").style.visibility = "hidden";

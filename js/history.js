@@ -10,7 +10,6 @@ function fetchGames() {
         allGameslength = (games.length / 5) -1;
         console.log(allGameslength);
         if (game) {
-          //console.log(`Game ${i + 1}:`, game);
           document.getElementById(`matchName${i+1}`).textContent = 'Гра '+(games.length-(i + currentPage * gamesPerPage));  
           document.getElementById(`date${i + 1}`).textContent = new Date(game.date).toLocaleDateString();
           document.getElementById(`result${i + 1}`).textContent = game.score;
