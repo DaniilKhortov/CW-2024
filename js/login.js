@@ -23,7 +23,6 @@ function Login() {
     })
     .then(data => {
         if (data.user) {
-            //sessionStorage.setItem("token", data.token);
             sessionStorage.setItem("email", data.user.email);
             sessionStorage.setItem("nickname", data.user.nickname);
             sessionStorage.setItem("imagePath", data.user.imagePath);

@@ -9,7 +9,6 @@ fetch('/leaderBoard')
         document.getElementById(`leaderDate${i + 1}`).textContent = new Date(users[i].registrationDate).toLocaleDateString();
         document.getElementById(`leaderResult${i+1}`).textContent = users[i].record;
         document.getElementById(`leaderVersion${i + 1}`).textContent = users[i].version; 
-        //document.getElementById(`reality${i + 1}`).style.display = "flex";
       }
       else {
         document.getElementById(`reality${i + 1}`).style.display = "none";  

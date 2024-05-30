@@ -1,6 +1,6 @@
 
-document.getElementById("revBtn").addEventListener("click", Register);
-function Register() {
+document.getElementById("revBtn").addEventListener("click", AddResponse);
+function AddResponse() {
     let tempEmail = document.getElementById('email').value;
     let text = document.getElementById('message').value;
 
