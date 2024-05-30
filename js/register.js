@@ -1,3 +1,4 @@
+/*Connection with HTML*/
 document.getElementById("imageChanger").addEventListener("click", ImageChange);
 document.getElementById("regBtn").addEventListener("click", Register);
 document.getElementById("icon1").addEventListener("click", function () {
@@ -9,6 +10,8 @@ document.getElementById("icon2").addEventListener("click", function () {
 document.getElementById("icon3").addEventListener("click", function () {
     changeIcon("./img/icon3.png");
 });
+
+/*Function to hide icon before choosing new*/
 function ImageChange() {
 
     let registerImgSection = document.getElementById("registerImgSection");
@@ -20,7 +23,7 @@ function ImageChange() {
 
 }
 
-
+/*Function to change the icon */
 function changeIcon(iconPath) {
     let registerImgSection = document.getElementById("registerImgSection");
 
@@ -31,10 +34,13 @@ function changeIcon(iconPath) {
     document.getElementById("currentIcon").src = iconPath;
 }
 
+/*Function to validate e-mail via checking it grammar. Also it only supports e-mails like @gmail.com, @yahoo.com, @outlook.com). It returns entered value in lowerCase*/
 function validateRealisticEmail(email) {
     let re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@(gmail\.com|yahoo\.com|outlook\.com)$/;
     return re.test(String(email).toLowerCase());
 }
+
+/*Function to validate password via checking it grammar.*/
 function validatePassword(password) {
 
     const isLongEnough = password.length >= 8;
@@ -48,6 +54,8 @@ function validatePassword(password) {
 
     return isLongEnough && hasUpperCase && hasLowerCase && hasSpecialCharacter && hasNumber;
 }
+
+/*Function to validate all entered data via calling support-function. Also, it adds aditional data and saves to server.*/
 function Register() {
     let email = document.getElementById('email').value;
     let nickname = document.getElementById('nickname').value;
@@ -59,6 +67,7 @@ function Register() {
 
     let confirmPassword = document.getElementById('psw2').value;
 
+    /*Checking input data.*/
     if (password !== confirmPassword) {
         alert("Registration Error: Passwords are different!");
         return;
@@ -76,7 +85,7 @@ function Register() {
         alert("Password must contain one uppercase letter, one undercase letter, one digit and one spacial symbol. The minimal length of password is 8 symbols!");
         return;
     }
-
+    /*Creating data fields for user.*/
     const player = {
         email: email,
         nickname: nickname,
@@ -86,6 +95,7 @@ function Register() {
         registrationDate: new Date()
     };
 
+    /*Saving data.*/
     fetch('/register', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
