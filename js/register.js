@@ -10,6 +10,33 @@ document.getElementById("icon2").addEventListener("click", function () {
 document.getElementById("icon3").addEventListener("click", function () {
     changeIcon("./img/icon3.png");
 });
+document.getElementById("icon4").addEventListener("click", function () {
+    changeIcon("./img/icon4.png");
+});
+//document.getElementById("icon5").addEventListener("click", function () {
+//    changeIcon("./img/icon5.png");
+//});
+document.getElementById("icon6").addEventListener("click", function () {
+    changeIcon("./img/icon6.png");
+});
+document.getElementById("icon7").addEventListener("click", function () {
+    changeIcon("./img/icon7.png");
+});
+document.getElementById("icon8").addEventListener("click", function () {
+    changeIcon("./img/icon8.png");
+});
+document.getElementById("icon9").addEventListener("click", function () {
+    changeIcon("./img/icon9.png");
+});
+document.getElementById("icon10").addEventListener("click", function () {
+    changeIcon("./img/icon10.png");
+});
+document.getElementById("icon11").addEventListener("click", function () {
+    changeIcon("./img/icon11.png");
+});
+document.getElementById("icon12").addEventListener("click", function () {
+    changeIcon("./img/icon12.png");
+});
 
 /*Function to hide icon before choosing new*/
 function ImageChange() {
