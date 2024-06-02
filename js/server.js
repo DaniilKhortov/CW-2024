@@ -2,15 +2,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
+const path = require('path');
 const app = express();
 
 //підключення до коду
-app.use(express.static('C:\\Users\\Horto\\Documents\\GitHub\\CW-2024'));//C:\\Users\\Horto\\Documents\\GitHub\\CW-2024
+app.use(express.static(path.join(__dirname, '..')));//C:\\Users\\Horto\\Documents\\GitHub\\CW-2024
 /*D:\\Mysor2\\Web-prog\\Kursova\\github\\CW-2024*/
 app.use(cors());
 app.use(express.json());
-
+console.log(path.join(__dirname, '..'));
 //підключення до бази даних
 mongoose.connect('mongodb+srv://troianvitalii:kilativ777@snakedb.yh9ecr0.mongodb.net/snakeDB?retryWrites=true&w=majority', {
   useNewUrlParser: true,
