@@ -63,7 +63,7 @@ function changeIcon(iconPath) {
 
 /*Function to validate e-mail via checking it grammar. Also it only supports e-mails like @gmail.com, @yahoo.com, @outlook.com). It returns entered value in lowerCase*/
 function validateRealisticEmail(email) {
-    let re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@(gmail\.com|yahoo\.com|outlook\.com)$/;
+    let re = /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@(gmail\.com|yahoo\.com|outlook\.com|ukr\.net|ua\.fm)$/;
     return re.test(String(email).toLowerCase());
 }
 
