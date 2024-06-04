@@ -57,18 +57,18 @@
                 </a>
             </div>
 
-            <div class="menu-box box-right hidden-right account" id="account">
+            <div class="menu-box box-right account" id="account">
                 <div class="reg-measure"></div>
-                <div class="account-image">
+                <div class="account-image account-active" id="instructionImg">
                     <img width="60" id="accountImg" src="./img/icon0.png" />
                 </div>
-                <div class="account-info">
+                <div class="account-info account-active" id="instructionBtn">
                     <p id="accountName">No name</p>
                 </div>
                 <div class="account-btn" id="accountExit">
                     <p>Вихід</p>
                 </div>
-                
+
 
 
             </div>
@@ -76,7 +76,50 @@
         </div>
 
     </div>
+    <div class="instruction instruction-index" id="instructionText">
+        <div class="instruction-content">
+            <div class="desc-text">
+                <div class="snake-exit-btn" id="crossBtnSnake">
+                    <img src="./img/cross.png" width="30" />
+                </div>
+                <p class="title">Статистика</p>
+                <div class="stat-box">
+                    <p class="stat-box-left">Нік:</p>
+                    <p class="stat-box-right" id="statName">0</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-box-left">Електрона пошта:</p>
+                    <div class="stat-box-right">
+                        <p class="stat-email" id="statEmail">0</p>
+                    </div>
 
+                </div>
+                <div class="stat-box">
+                    <p class="stat-box-left">Рекорд:</p>
+                    <p class="stat-box-right" id="statRecord">0</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-box-left">Зіграно матчів:</p>
+                    <div class="stat-box-right">
+                        <p id="statMatch">0</p>
+                    </div>
+
+                </div>
+                <div class="stat-box">
+                    <p class="stat-box-left">Яблук зібрано:</p>
+                    <p class="stat-box-right" id="statApple">0</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-box-left">Дата реєстрації:</p>
+                    <div class="stat-box-right">
+                        <p class="stat-date" id="statReg">0</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
     <div class="regSection">
         <div class="regSection-content review-content">
             <div class="register-title">
@@ -119,6 +162,7 @@
 
 
     <!--script section-->
+    <script type="text/javascript" async="" src="./js/statistic.js"></script>
     <script type="text/javascript" async="" src="./js/review.js"></script>
     <script type="text/javascript" async="" src="./js/account.js"></script>
     <script type="text/javascript" async="" src="./js/version.js"></script>

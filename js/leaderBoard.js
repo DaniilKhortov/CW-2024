@@ -1,3 +1,16 @@
+document.getElementById("instructionBtn").addEventListener("click", InstructionPop);
+document.getElementById("instructionImg").addEventListener("click", InstructionPop);
+
+
+function InstructionPop() {
+    document.getElementById("crossBtnSnake").addEventListener("click", InstructionUnPop);
+    document.getElementById("instructionText").style.display = "block";
+}
+function InstructionUnPop() {
+    document.getElementById("instructionText").style.display = "none";
+}
+
+
 fetch('/leaderBoard')
   .then(response => response.json())
   .then(users => {
