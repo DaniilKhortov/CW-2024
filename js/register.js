@@ -89,7 +89,7 @@ function Register() {
     let password = document.getElementById('psw').value;
     let imagePath = document.getElementById('currentIcon').src;
     
-
+    imagePath = imagePath.substring(imagePath.lastIndexOf('/')-3);
     let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     let confirmPassword = document.getElementById('psw2').value;
