@@ -100,11 +100,11 @@ node server.js
 
 
 ### Player customization 
-![](media/custom.gif)
+![](media/weather.gif)
 
 ### Board customization 
 By allowing geolocation, board will be automaticaly changed by weather in your region 
-![](media/weather.gif)
+![](media/custom.gif)
 
 
 
