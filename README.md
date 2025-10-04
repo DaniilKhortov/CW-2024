@@ -16,29 +16,27 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+<li>
+  <a href="#usage">Usage</a>
+  <ul>
+    <li><a href="#server-deployment">Server deployment</a></li> 
+    <li><a href="#launching-the-application-with-local-hosting">Launching the application with local hosting</a></li>
+    <li><a href="#launching-the-application-with-dynamic-hosting-provider">Launching the application with dynamic hosting provider</a></li>
+  </ul>
+</li>
     <li>
-      <a href="#usage">Usage</a>
-    </li>
-    <li>
-      <a href="#project-structure">Project Structure</a>
-    </li>
-    <li>
-      <a href="#database">Database</a>
+      <a href="#services">Services</a>
       <ul>
-        <li><a href="#table-structures">Table Structures</a></li>
+        <li><a href="#starting-game">Starting game</a></li>
+        <li><a href="#player-customization">Player customization </a></li>
+        <li><a href="#board-customization">Board customization </a></li>
       </ul>
-    </li>
-    <li>
-      <a href="#server-functions">Server Functions</a>
-    </li>
-    <li>
-      <a href="#contact">Contact</a>
     </li>
   </ol>
 </details>
 
 ## About The Project
-A basic snake game web-application. Except basic game, it has leaderboard, customization and match history.
+A basic snake game web-application. Except basic game, it has leaderboard, customization and match history. This project was developed as a coursework to demonstrate web application with Node.js and Express.
 
 ### Built With
 Languages:
@@ -55,138 +53,62 @@ Databases:
 
 ## Getting Started
 ### Prerequisites
-* Flask
-  ```sh
-  pip install Flask
-  ```
-* SQLAlchemy
-  ```sh
-  pip install SQLAlchemy
-  ```
-* SQLAlchemy for Flask  
-  ```sh
-  pip install Flask-SQLAlchemy
-  ```
+* Software requires Node.js. It can be downloaded [here](https://nodejs.org/en/download).
 
 ### Installation
-
 1. Clone the repository
   ```sh
-  git clone https://github.com/DaniilKhortov/file_exchanger_KhortovDP.git
+  git clone https://github.com/DaniilKhortov/CW-2024.git
   ```
-2. Install libraries
+2. Change the git remote (optional if you want to change your origin)
   ```sh
-  pip install Flask-SQLAlchemy
+  git remote set-url origin https://github.com/DaniilKhortov/CW-2024.git
   ```
-3.Change git remote
+3. Install node.js packages
   ```sh
-  git remote set-url origin https://github.com/DaniilKhortov/file_exchanger_KhortovDP.git
+  npm install
   ```
 
 
 ## Usage
-### File download 
-![](media/userDownload.gif)
+### Server deployment
+The application requires a dynamic server environment. It can be set up:
+1. With dynamic hosting provider. For example, [Render](https://render.com/).
+2. With local hosting.
+   
+### Launching the application with local hosting
+1. To run the application, navigate to the CW-2024/js directory.
+   
+2. There is a file "server.js". It is run by command:
+  ```sh
+  node server.js
+  ```
 
+3. In browser, website can be found under address http://localhost:3000/index.html.
 
-### File upload & configuration 
-![](media/adminPanel.gif)
-
-
-### Authorization & registration
-![](media/registration&authorization.gif)
-
-
-
-
-## Project Structure
-```bash
-< PROJECT ROOT >
-   |
-   |-- app/
-   |    |
-   |    | -- models.py                     # Database Tables
-   |    | -- routes.py                     # Main functions to work with client
-   |    | -- utils.py                      # Helpers to manipulate date, files  
-   |    | -- __init__.py                   # Initialization of flask app, connection to database
-   |    | -- accountsData.db               # Database
-   |    |
-   |    |-- storage/                       # Stores files that were sent to server
-   |    |
-   |    |-- static/
-   |    |    |-- css/                  
-   |    |    |    |
-   |    |    |    |-- desktop.css          # Used by pages, provides adaptability of interface to the bigger screens
-   |    |    |    |-- reset.css            # Used by pages, sets basic html-elements parameters to 0
-   |    |    |    |-- style.css            # Used by pages, responsible  for design 
-   |    |    |-- js/                  
-   |    |    |    |
-   |    |    |    |-- auth.js              # Responsible for keeping user authorized after closing window
-   |    |    |    |-- download.js          # Responsible for downloading files by user and admin
-   |    |    |    |-- elementsUtil.js      # Responsible for file upload and configuration by admin
-   |    |
-   |    |-- templates/
-   |    |    |    
-   |    |    |-- index.html                # Main page
-   |    |    |-- login.html                # Authorization page
-   |    |    |-- register.html             # Registration page
-   |    |    |-- admin.html                # Modified main page for admin
-   |    |    |
-   |    |    |
-   |    |    |
-   |
-   |-- run.py                              # Starts the app 
-   |
-   |-- ************************************************************************
+### Launching the application with dynamic hosting provider
+1. Choose server rent plan.
+2. Upload project directory.
+3. Input starting command:
+```sh
+node server.js
 ```
-## Database
-Database includes tables:
-<ul>
-  <li>ACCOUNT - represents users and admins</li>
-  <li>FILE - represents files that exist in storage</li>
-  <li>LOG - records file downloads commited by users</li>
-</ul>
 
-### Table Structures
-
-ACCOUNT
-
-  ```sh
-  CREATE TABLE ACCOUNT( ID INT PRIMARY KEY NOT NULL, LOGIN CHAR (320) NOT NULL, PASSWORD CHAR (320) NOT NULL, ROLE CHAR (10));
-  ```
-Accounts can have only one from two roles: admin, user. User account can be created though registration and authorization pages. Such accounts are presented as a (password=a), user(password=user), test(password=test)
-However, admin status may be obtained only by new member insertion in ACCOUNT table. Project already has one basic representative: <b>admin(password=admin)</b>
+## Services
+### Starting game
+![](media/starting.gif)
 
 
-FILE
+### Player customization 
+![](media/custom.gif)
 
-  ```sh
-  CREATE TABLE FILE(ID INT PRIMARY KEY NOT NULL, NAME CHAR(100) NOT NULL, SIZE CHAR(100) NOT NULL, DATE CHAR(100) NOT NULL, DISPLAY CHAR(10) NOT NULL, DOWNLOADS INT NOT NULL);
-  ```
-Files can be displayed or hidden by administrator via interface. 
+### Board customization 
+By allowing geolocation, board will be automaticaly changed by weather in your region 
+![](media/weather.gif)
 
-LOG
-  ```sh
-  CREATE TABLE LOG(ID INT PRIMARY KEY NOT NULL, LOGIN CHAR(320) NOT NULL, FILE CHAR(100) NOT NULL, TIME CHAR(20) NOT NULL);
-  ```
-Logs are created automatically by each download.
 
-## Server functions
-<ul>
-  <li>home() - sends data to main page index.html or admin.html according to user status. Is triggered after redirection to the main page</li>
-  <li>login() - checks weather user exists in database. Is triggered in login.html</li>
-  <li>logout() - removes user`s cookies from page. Is triggered after pressing button on index.html</li>
-  <li>register() - checks and adds new user to database. Is triggered in register.html</li>
-  <li>upload() - saves file from client to server`s storage directory. After that, record will automatically apear in database. Is triggered after pressing button "upload" on admin.html and recieving JSON from elementsUtil.js</li>
-  <li>admin() - sends data to admin.html. Is triggered after redirection to the admin page</li>
-  <li>updateRecordStatus() - changes DISPLAY parameter of file in database. Is triggered after pressing "eye-buttons" on admin page</li>
-  <li>download() - sends file from server to client after recieving JSON. Is triggered after pressing "download button" on admin and main pages</li>
-  <li>delete() - removes file from storage. After that, record will automatically deleted. Is triggered after pressing "delete button" on admin page</li>
-</ul>
 
-<!-- CONTACT -->
-## Contact
 
-Daniil Khortov- daniil.khortov.2005@gmail.com
 
-Project Link: https://github.com/DaniilKhortov/file_exchanger_KhortovDP.git
+
+
